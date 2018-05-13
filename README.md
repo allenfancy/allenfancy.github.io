@@ -1,137 +1,313 @@
-# Prologue - Jekyll Theme
+# Attention
+Because of the server, [joytou.github.io](https://github.com/joytou/joytou.github.io) has moved from [`joytou.github.io`](https://github.com/joytou/joytou.github.io) to [`JOYTOU`](https://github.com/joytou/JOYTOU). And no longer supported for [`joytou.github.io`](https://github.com/joytou/joytou.github.io), but you can still use it as a blog template.
+# JOYTOU
+JOYTOU(http://joytou.net.cn) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme.
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-prologue.svg)](https://badge.fury.io/rb/jekyll-theme-prologue)
+# Content
 
-![Prologue Theme](assets/images/screenshot.png "Prologue Theme Screenshot")
+| Directory | 目录 | 目錄 | 
+|:----------:|:----------:|:----------:|
+| [English](#en) | [简体中文](#cn)| [繁體中文](#tw) |
+| [Introduction](#introduction) | [概述](#概述) | [概述](#概述) |
+| [Features](#features) | [功能特色](#功能特色) | [功能特色](#功能特色)|
+| [Native Server](#native-server) | [服务版本](#服务版本) | [服務版本](#服務版本) |
+| [File directories](Mainfest.md) | [文件目录](Mainfest.md) | [文件目錄](Mainfest.md) |
+| [Configurations](#configurations) | [配置](#配置) | [配置](#配置) |
+| [Writting article](#writting-article) | [写文章](#写文章) | [寫文章](#寫文章) |
+| [License](#license) | [许可协议](#许可协议) | [許可協議](#許可協議)|
 
-This is Prologue, a simple, single page responsive site template from [HTML5 UP](https://html5up.net/prologue), now available as a blog-aware Jekyll theme from [Chris Bobbe](https://chrisbobbe.github.io). It features a clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+-------
 
-**Demo**: https://chrisbobbe.github.io/jekyll-theme-prologue/
+# en
 
-# Added Features
+## Introduction
+JOYTOU(http://joytou.nets.hk) is a BootStrap blog template developed by Joytou Wu. You can create your blog by forking or copying this project. JOYTOU works fine with Git. You can use Coding、GitHub、BitBucket、GitLab as your Git repository. JOYTOU is free and you can change it to suit your theme. But no matter what, you must keep the copyright.
 
-* **Blogging and multi-page features you expect from Jekyll**
-* Compatible with GitHub Pages
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Build your homepage with **custom scrolly sections** in the _sections folder
- * Set a **cover photo** for any section (not just the first), with alt text for screen readers and SEO
-* Add your **social profiles** easily in `_config.yml`.
-* Automatic search engine optimization (SEO) **meta tags** based on info you provide in `_config.yml` and frontmatter
-* **Google Analytics** built-in; just put your [Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en) in `_config.yml` as `google_analytics`
-* Custom **404 page** (called 404.html; to activate, move it to your project directory).
+## Features
+1. BootStrap style
+2. Blog basic functions
+3. Top navigation bar
+4. Automatically generate Sitemap.xml
+5. View the article by date, category, tag, etc.
+6. The important articles can be placed at the top
+7. Article sharing
+8. Multi-language
+9. Article comment
+10. Global search
+11. JQuery responsive design
 
-# Installation
+## Native Server
+Clone from github.com:
 
-There are two ways to get started (choose one):
-
-1. **Install the [jekyll-theme-prologue gem](https://rubygems.org/gems/jekyll-theme-prologue).** Instructions are in the [Jekyll docs](https://jekyllrb.com/docs/themes/#installing-a-theme). After running `bundle install`, you can find the theme files by running `open $(bundle show jekyll-theme-prologue)`.  A sample working `_config.yml` file ships with the gem; if you want to activate it, move it to your project's root directory. It will do nothing until you move it there, replacing the default `_config.yml` file.
-2. **Fork or clone the [GitHub repository](https://github.com/chrisbobbe/jekyll-theme-prologue).** If you want to use [GitHub Pages](https://pages.github.com/), create a branch named `gh-pages`, and replace `theme: jekyll-theme-prologue` with `remote_theme: chrisbobbe/jekyll-theme-prologue` in the provided `_config.yml` ([GitHub Pages now supports open-source themes on GitHub](https://github.com/blog/2464-use-any-theme-with-github-pages)).
-
-Next, make sure that `url` and `base_url` are set for your own website in `_config.yml`. For local testing, make them both blank. Add a photo avatar to your project, then set `avatar: path/to/your/avatar.jpg` in _config.yml; for example, `avatar: assets/images/avatar.jpg` (48x48 pixels works best). Poke around the sample `_config.yml` file to see how you can add your social profiles.
-
-# Build your homepage
-
-1. **Your `_config.yml` file must include the following line or your homepage won't work**: `collections: [sections]`. This tells Jekyll to look in the _sections folder (which you will create) for your content and render it all on one page.
-
-2. **Create a `_sections` folder** in your project's root directory and start adding content to your homepage. Set a cover photo in any of the sections by adding `cover-photo: path/to/photo.jpg` and `cover-photo-alt: your alt text here` to the section's frontmatter. Sample content is provided in the [GitHub repository](https://github.com/chrisbobbe/jekyll-theme-prologue/tree/master/_sections).
-
-All new sections should be added as html or Markdown documents in the `_sections` folder. The following section variables can be set with [frontmatter](https://jekyllrb.com/docs/frontmatter/):
-- `title` (required)
-- `order` (required; orders the sequence of sections on the page. Example: `1`)
-- `cover-photo` (optional; sets a background image for the section. Example: `assets/images/banner.jpg`)
-- `cover-photo-alt` (required if using a cover photo. Describes the photo for screen readers and SEO; e.g. "Dome of Light art installation, Kaohsiung, Taiwan")
-- `icon` (optional; see [Font Awesome](http://fontawesome.io/icons/) for icon codes. Example: `fa-github`)
-- `auto-header` (optional; "use-title" is default, "none" for no header, or custom header text)
-- `hide` (optional; if `true`, the section won't appear)
-
-# Start blogging!
-
-Jekyll has great resources to get you started writing blog posts. Check out [this Jekyll Docs page](https://jekyllrb.com/docs/posts/) first. When you've written a post or two, copy the following into a new file in your project directory called `blog.html`, and you'll see a link to your blog from the homepage:
-
+- Clone with SSH:
 ```
----
-layout: blog
-title: My Blog
----
+git clone git@github.com:joytou/joytou.github.io.git
 ```
 
--- and that's it!
-
-# Add a page
-
-To add a page, just make a new .html or .md file in your project directory. There's an example called `reading-list` [provided](https://github.com/chrisbobbe/jekyll-theme-prologue/blob/master/reading-list.md) with the GitHub repository. Add this frontmatter:
-
+- Clone with HTTPS:
 ```
----
-title: My New Page
-layout: page
----
+git clone https://github.com/joytou/joytou.github.io.git
 ```
 
-You can also set these page variables in the frontmatter, if you want:
-- `subtitle`
-- `order` (orders links in the nav menu, e.g. `1`)
-- `icon` (optional; see [Font Awesome](http://fontawesome.io/icons/) for icon codes. Example: `fa-github`)
-- `hide` (optional; if `true`, a link won't appear in the nav menu. All this does is remove the nav link; your page will still be served to anyone who has the URL.)
+## Configurations
+in _config.yml:
 
-**This same set of frontmatter variables (including `title`) can also be set in `index.md` and `blog.html`.** You may want to give them titles, or hide the homepage link with `hide: true` if the homepage is the only page.
+| Key | Value | Annotation |
+|:----------:|:----------:|:----------|
+|      email      |      1540294142@qq.com      |       Your e-mail address     |
+|      author      |      Joytou Wu      |      The article author's name      |
+|       url     |     http://joytou.nets.hk       |      Your site address, and do not add  `/`  in the end      |
+|     github       |      https://github.com/joytou/      |      Your github account address      |
+|      github_username      |      joytou      |       Your github account name     |
+|      repo      |      joytou.github.io      |      Your repository name     |
+|      owner_name      |      joytou      |      The site owner name      |
+|     description       |      ---      |     Your site description       |
+|      keywords      |      ---      |      Your site keywords, and it must listted as array      |
+|       remind     |      BOOL      |       Whether to remind you to upgrade the latest version when there is the latest version.     |
+|      BaiduSiteVerification      |      ---      |      The string of Baidu Site Verification. If you didn't have, left it blank.      |
+|      51la      |      ---      |      The String of 51.la statistic's id. If you didn't have, left it blank.       |
+|       51lamb     |      ---      |      The style of 51.la statistic's data reference.       |
+> Please refer to the official website for other variables.
 
-For advanced SEO, this theme also lets you add `permalink` (see [Jekyll Docs](https://jekyllrb.com/docs/permalinks/#where-to-configure-permalinks)), `robots` (string, e.g. "noindex, nofollow"), and `canonical` (boolean; true is default) to any page or post.
+in each /_data/(languages code).yml:
 
-# Contributing
+| Key | Value | Annotation |
+|:----------:|:----------:|:----------|
+| sitename | JOYTOU | Your site name |
+| sitesubname | An amateur programmer who loves to sit around and refuse to rest! | Your site subname |
+| sitedescription | This blog template build by builder from style | Your site descriphtion(please keeping the string: 'builder', 'style') |
+| siteabout | JOYTOU was done by me (Joytou). If you like this template, you can subsidize me a little. | Writting something about your site or yourself(yourselves) |
 
-Please feel free to submit issues and feature requests!
-
-# Credits
-
-Thanks to @andrewbanchich for his many Jekyll adaptations of HTML5 UP's elegant themes, which helped and inspired me, and of course many thanks to HTML5 UP.
-
-Original README from HTML5 UP:
-
+## Writting article
+post format:
 ```
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+--- 
+layout: post 
 
+title:  test       
+#article title 
 
-This is Prologue, a simple, single page responsive site template. It features a
-clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+date:   2015-04-05 08:00:00 +0800     
+#publish date 
 
-Demo content images* are courtesy of the ridiculously talented Felicia Simion. Check out
-more of her amazing work over at deviantART:
+nav: post     
 
-http://ineedchemicalx.deviantart.com/
+stickie: true         
+#Make the article stick to the top if true 
 
-(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
-and/or use any of Felicia's work without her explicit permission!)
+category: official         
+#the category for the article 
 
-Demo banner images* courtesy of Unsplash, a radtastic collection of CC0 (public domain)
-images you can use for pretty much whatever.
+tags: [log, bootstrap, joytou]     
+#the tags for the article, it should be a array 
+--- 
+* content 
+{:toc} 
 
-(* = Not included)
+Summary Content
+#Summary content. 
 
-AJ
-aj@lkn.io | @ajlkn
+<!-- more --> 
 
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
-
-
-Credits:
-
-	Demo Images:
-		Felicia Simion (ineedchemicalx.deviantart.com)
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		CSS3 Pie (css3pie.com)
-		background-size polyfill (github.com/louisremi)
-		Respond.js (j.mp/respondjs)
-		jquery.scrolly (@ajlkn)
-		jquery.scrollzer (@ajlkn)
-		Skel (skel.io)
+Article mainly content
+#Writting the article here. 
 ```
+
+
+## License
+By using the Service, you [agree to comply with all the terms of this Agreement](https://github.com/joytou/joytou.github.io/raw/master/LICENSE).
+ 
+-------
+
+# cn
+
+## 概述
+JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基于Bootstrap开发的博客模板。您可以通过fork或者复制本项目进行创建您的博客。JOYTOU集成了Git代码版本控制，用户可以选择 Coding、GitHub、BitBucket、GitLab 等任意的代码仓库。JOYTOU是免费的，您可以更改以适应您的主题。但不管如何您务必保留相关版权。
+
+## 功能特色
+1. BootStrap样式
+2. 博客基本功能
+3. 顶部导航栏
+4. 自动Sitemap.xml
+5. 通过日期、类别、标签等分类文章
+6. 重要文章可置顶
+7. 文章分享
+8. 多语言
+9. 文章评论
+10. 全局搜索
+11. JQuery响应式设计
+
+## 服务版本
+从Github克隆项目：
+
+- 用SSH克隆：
+```
+git clone git@github.com:joytou/joytou.github.io.git
+```
+
+- 用HTTPS克隆：
+```
+git clone https://github.com/joytou/joytou.github.io.git
+```
+
+## 配置
+_config.yml:
+
+| 键 | 值 | 备注 |
+|:----------:|:----------:|:----------|
+|      email      |      1540294142@qq.com      |       您的电子邮件地址     |
+|      author      |      Joytou Wu      |      文章作者名称      |
+|       url     |     http://joytou.nets.hk       |      您的网址，末尾不能加上 `/`       |
+|     github       |      https://github.com/joytou/      |      您的Github用户地址      |
+|      github_username      |      joytou      |       您的Github用户名     |
+|      repo      |      joytou.github.io      |      您的repository名字     |
+|      owner_name      |      joytou      |      网站所有者名字      |
+|     description       |      ---      |     网站的描述       |
+|      keywords      |      ---      |      网站的关键词，必须以数组形式列出      |
+|       remind     |      BOOL      |       是否提醒可升级新版本     |
+|      BaiduSiteVerification      |      ---      |      百度网站的验证码。如果没有，请留空白      |
+|      51la      |      ---      |      51.la网站的统计id。如果没有，请留空白       |
+|       51lamb     |      ---      |      51.la数据引用的样式       |
+> 其它变量请参考官网的介绍。
+
+各个 /_data/(语言代码).yml 文件:
+
+| 键 | 值 | 备注 |
+|:----------:|:----------:|:----------|
+| sitename | JOYTOU | 您的网站名称 |
+| sitesubname | 一个热爱折腾、不肯休息的业余程序员！ | 您的网站副名称 |
+| sitedescription | 此博客模板由builder通过style创建 | 您的网站描述(请保留字符串：'builder'、'style') |
+| siteabout | JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。 | 一些关于您的网站或者您(们)的信息 |
+
+## 写文章
+文章格式：
+```
+--- 
+layout: post 
+
+title:  test       
+#文章标题 
+
+date:   2015-04-05 08:00:00 +0800     
+#发布日期 
+
+nav: post     
+
+stickie: true         
+#如果为true则文章置顶 
+
+category: official         
+#文章的分类 
+
+tags: [log, bootstrap, joytou]     
+#文章的标签，必须是数组 
+--- 
+* content 
+{:toc} 
+
+Summary Content
+#摘要内容 
+
+<!-- more --> 
+
+Article mainly content
+#在这儿写文章
+```
+
+## 许可协议
+一旦您使用本服务，即表示[您同意遵循本协议的所有约定](https://github.com/joytou/joytou.github.io/raw/master/LICENSE)。
+
+-------
+
+# tw 
+
+## 概述 
+JOYTOU(http://joytou.nets.hk) 是一款由Joytou Wu基於Bootstrap開發的博客模板。您可以通過fork或者復製本項目進行創建您的博客。 JOYTOU集成了Git代碼版本控制，用戶可以選擇 Coding、GitHub、BitBucket、GitLab 等任意的代碼倉庫。 JOYTOU是免費的，您可以更改以適應您的主題。但不管如何您務必保留相關版權。 
+
+## 功能特色 
+1. BootStrap樣式 
+2. 博客基本功能 
+3. 頂部導航欄 
+4. 自動Sitemap.xml 
+5. 通過日期、類別、標籤等分類文章 
+6. 重要文章可置頂 
+7. 文章分享 
+8. 多語言 
+9. 文章評論 
+10. 全局搜索 
+11. JQuery響應式設計 
+
+## 服務版本 
+從Github克隆項目： 
+
+- 用SSH克隆： 
+``` git clone git@github.com:joytou/joytou.github.io.git ``` 
+
+- 用HTTPS克隆： 
+``` git clone https://github.com/joytou/joytou.github.io.git ``` 
+
+## 配置 
+_config.yml: 
+
+| 鍵 | 值 | 備註 | 
+|:----------:|:----------:|:----------| 
+| email | 1540294142@qq.com | 您的電子郵件地址 | 
+| author | Joytou Wu | 文章作者名稱 | 
+| url | http://joytou.nets.hk | 您的網址，末尾不能加上 `/` | 
+| github | https://github.com/joytou/ | 您的Github用戶地址 | 
+| github_username | joytou | 您的Github用戶名 | 
+| repo | joytou.github.io | 您的repository名字 | 
+| owner_name | joytou | 網站所有者名字 | 
+| description | --- | 網站的描述 | 
+| keywords | --- | 網站的關鍵詞，必須以數組形式列出 | 
+| remind | BOOL | 是否提醒可升級新版本 | 
+| BaiduSiteVerification | --- | 百度網站的驗證碼。如果沒有，請留空白 | 
+| 51la | --- | 51.la網站的統計id。如果沒有，請留空白 | 
+| 51lamb | --- | 51.la數據引用的樣式 | 
+> 其它變量請參考官網的介紹。 
+
+各個 /_data/(語言代碼).yml 文件:
+
+| 鍵 | 值 | 備註 |
+|:----------:|:----------:|:----------|
+| sitename | JOYTOU | 您的網站名稱 |
+| sitesubname | 一個熱愛折騰、不肯休息的業餘程序員！ | 您的網站副名稱 |
+| sitedescription | 此博客模板由builder通過style創建 | 您的網站描述(請保留字符串：'builder'、'style') |
+| siteabout | JOYTOU是由我(Joytou)單獨完成的。如果您喜歡此模板，可以對此模板小額資助。 | 一些關於您的網站或者您(們)的信息 |
+## 寫文章
+post format:
+```
+--- 
+layout: post 
+
+title:  test       
+#文章標題
+
+date:   2015-04-05 08:00:00 +0800     
+#發佈日期
+
+nav: post     
+
+stickie: true         
+#如果為true則文章置頂
+
+category: official         
+#文章的分類
+
+tags: [log, bootstrap, joytou]     
+#文章的標籤，必須是數組
+--- 
+* content 
+{:toc} 
+
+Summary Content
+#摘要內容
+
+<!-- more --> 
+
+Article mainly content
+#在這兒寫文章
+```
+
+## 許可協議 
+一旦您使用本服務，即表示[您同意遵循本協議的所有約定](https://github.com/joytou/joytou.github.io/raw/master/LICENSE)。

@@ -1,105 +1,144 @@
-<!DOCTYPE HTML>
-<!--
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-Jekyll integration by Chris Bobbe | chrisbobbe.github.io
--->
-<html><head><!-- Robots -->
-  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/jekyll-theme-prologue/" /><!-- Title, description, author --><title>主页 | Your awesome title - Your awesome subtitle</title>
-  <meta name="description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
-  <meta name="author" content="Your Incredible Name" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="主页 | Your awesome title - Your awesome subtitle" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://localhost:4000/jekyll-theme-prologue/assets/images/avatar.jpg" />
-  <meta property="og:url" content="http://localhost:4000/jekyll-theme-prologue/" />
-  <meta property="og:site_name" content="Your awesome title" />
-  <meta property="og:description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
-  
-  <!-- Styles -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--[if lte IE 8]><script src="/jekyll-theme-prologue/assets/js/ie/html5shiv.js" defer></script><![endif]-->
-  <link rel="stylesheet" href="/jekyll-theme-prologue/assets/css/main.css" />
-  <!--[if lte IE 8]><link rel="stylesheet" href="/jekyll-theme-prologue/assets/css/ie8.css" /><![endif]-->
-  <!--[if lte IE 9]><link rel="stylesheet" href="/jekyll-theme-prologue/assets/css/ie9.css" /><![endif]-->
-
-  <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
-  <script src="/jekyll-theme-prologue/assets/js/jquery.scrolly.min.js" defer></script>
-  <script src="/jekyll-theme-prologue/assets/js/jquery.scrollzer.min.js" defer></script>
-  <script src="/jekyll-theme-prologue/assets/js/skel.min.js" defer></script>
-  <script src="/jekyll-theme-prologue/assets/js/util.js" defer></script>
-  <!--[if lte IE 8]><script src="/jekyll-theme-prologue/assets/js/ie/respond.min.js" defer></script><![endif]-->
-  <script src="/jekyll-theme-prologue/assets/js/main.js" defer></script>
-
-</head><body><!-- Header -->
-<div id="header">
-  <div class="top"><!-- Logo -->
-<div id="logo">
-  <a href="http://localhost:4000/jekyll-theme-prologue/" id="home-link">
-    <span class="image avatar48"><img src="/jekyll-theme-prologue/assets/images/avatar.jpg" alt="Avatar of Your Incredible Name" /></span>
-    <h1 id="title">Your awesome title</h1>
-    <p>Your awesome subtitle</p>
-  </a>
-</div><!-- Nav -->
-<nav id="nav">
-  <ul><li><a href="#" id="主页" class="active">
-            <span class="icon fa-home">主页</span>
-          </a></li><li><a href="http://localhost:4000/jekyll-theme-prologue/blog.html" id="博客-link">
-            <span class="icon fa-pencil">博客</span>
-          </a></li><hr><li><a href="#自我介绍" id="自我介绍-link" class="scrolly"><span class="icon fa-comment">自我介绍</span></a></li><li><a href="#关于我" id="关于我-link" class="scrolly"><span class="icon fa-user">关于我</span></a></li><li><a href="#联系我" id="联系我-link" class="scrolly"><span class="icon fa-envelope">联系我</span></a></li></ul>
-</nav></div>
-  <div class="bottom">
-   
-  </div>
-</div>
-<!-- Main -->
-<div id="main"><!-- Sections --><section id="自我介绍" class="shade-one cover dark">
-  <div class="container"><img src="/jekyll-theme-prologue/assets/images/banner.jpg" alt="example cover photo" class="back"><header>
-   后端开发工程师,可以查看我的<a href="https://github.com/allenfancy/jekyll-theme-prologue">GitHub!</a></p>
-</header>
-
-</div>
-</section>
-<section id="关于我" class="shade-two">
-  <div class="container"><header>
-			<h2>关于我</h2></header><a href="#" class="image featured"><img src="assets/images/pic08.jpg" alt="" /></a>
-
-<p></p>
-</div>
-</section>
-<section id="联系我" class="shade-three">
-  <div class="container"><header>
-			<h2>联系我</h2></header><p>对于某些文章有不明白的地方可以在这里联系我</p>
-
-<form method="post" action="https://formspree.io/your-email@example.com">
-  <div class="row">
-    <div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="姓名" /></div>
-    <div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="邮箱" /></div>
-    <div class="10u$">
-      <textarea name="message" placeholder="内容"></textarea>
-    </div>
-    <div class="12u$">
-      <input type="submit" value="点击发送" />
-    </div>
-  </div>
-</form>
-</div>
-</section>
-</div><!-- Footer -->
-<div id="footer">
-  
-  <!-- Copyright -->
-  <ul class="copyright">
+<!DOCTYPE html>
+<html>
+  <head>
+	<!--Directly to the area where the user language is located.-->
+	<script src="/assets/js/languages.js"></script>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="JOYTOU - Jekyll Blog Template" />
+	<meta name="description" content="只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog.">
+    <meta name="keywords" content="github,bootstrap,blog,joytou,markdown,jekyll,博客,个人博客,博客模板">
+    <meta name="author" content="Joytou Wu">
+	<meta name="owner" content="Joytou Wu" />
+    <meta name="copyright" content="(c) 2017" />
+	
+	<meta name="baidu-site-verification" content="eb6Z6IT34b" />
     
-      <li>&copy;Your awesome title. All rights reserved.</li>
+	
+    <meta name="sogou_site_verification" content="xhqLIE4SUI"/>
+	
+	
+    <meta name="360-site-verification" content="24cc2fe4596dc5c6885b587f8db09733" />
+	
+	<link rel="icon" href="/assets/favicon-32.ico">
+    <link rel="bookmark" href="/assets/favicon-128.ico" type="image/x-icon"　/>
+	<title>JOYTOU - Jekyll Blog Template</title>
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<script src="/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+	<div id="myCarousel" class="carousel slide">
+	  <!-- 轮播（Carousel）指标 -->
+	  <ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+	  </ol>   
+
+	  <!-- 轮播（Carousel）项目 -->
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img src="/assets/ScreenshortDemo/mo_cn.png" alt="mobile style in Chinese" width="100%">
+		  <div class="carousel-caption"><h4>mobile style in Chinese</h4></div>
+		</div>
+		<div class="item">
+		  <img src="/assets/ScreenshortDemo/mo_en.png" alt="mobile style in English" width="100%">
+		  <div class="carousel-caption"><h4>mobile style in English</h4></div>
+		</div>
+		<div class="item">
+		  <img src="/assets/ScreenshortDemo/pc_cn.png" alt="pc style in Chinese" width="100%">
+		  <div class="carousel-caption"><h4>pc style in Chinese</h4></div>
+		</div>
+		<div class="item">
+		  <img src="/assets/ScreenshortDemo/pc_en.png" alt="pc style in English" width="100%">
+		  <div class="carousel-caption"><h4>pc style in English</h4></div>
+		</div>
+	  </div>
+	  <!-- 轮播（Carousel）导航 -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div>
+<div class="jumbotron">
+  	<p><ul class="list-group">
+	  <p>请选择您的语言</p>
+	  <p>Please select your language</p>
+	  <li class="list-group-item"><a href="/cn/">简体中文</a></li>
+	  <li class="list-group-item"><a href="/tw/">繁体中文</a></li>
+	  <li class="list-group-item"><a href="/en/">English</a></li>
+	  </ul>
+	</p>
+	<div class="page-header">
+    <h1>JOYTOU
+        <small><p>由Joytou构建</p><p>build by Joytou</p></small>
+    </h1>
+</div>
+<p>该博客模板为免费模板，不收取任何费用。另外，如若您支持该博客模板，可以向我小额资助。</p>
+<p>This blog template is a free template and does not charge any fees. In addition, if you support the blog template, you can subsidize me a little.</p>
+	  <p>All English translations are provided by Google</p>
+</div>
+<script>
+	$(function(){
+		// 初始化轮播
+			$("#myCarousel").carousel('cycle');
+		// 循环轮播到上一个项目
+		$(".prev-slide").click(function(){
+			$("#myCarousel").carousel('prev');
+		});
+		// 循环轮播到下一个项目
+		$(".next-slide").click(function(){
+			$("#myCarousel").carousel('next');
+		});
+		// 循环轮播到某个特定的帧 
+		$(".slide-one").click(function(){
+			$("#myCarousel").carousel(0);
+		});
+		$(".slide-two").click(function(){
+			$("#myCarousel").carousel(1);
+		});
+		$(".slide-three").click(function(){
+			$("#myCarousel").carousel(2);
+		});
+		$(".slide-four").click(function(){
+			$("#myCarousel").carousel(3);
+		});
+	});
+</script>
     
-    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
-  </ul>
-  
-</div></body>
+
+
+<div class="blog-footer">
+      <p>Copyright &copy; 2017 <a href="//joytou.net.cn/">Joytou</a></p>
+      <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+      <p>此博客模板由<a href="//joytou.net.cn/">Joytou</a>通过<a href="http://getbootstrap.com">Bootstrap</a>创建。</p>
+      <p>
+        <a href="#">返回顶部</a>
+      </p>
+	  
+	  <p>
+		总访问量：<script language="javascript" type="text/javascript" src="//quote.users.51.la/?id=19258191&amp;mb=1"></script>
+	  </p>
+	  
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/docs.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+	<!-- 51.la statistic -->
+	<script language="javascript" type="text/javascript" src="//js.users.51.la/19258191.js"></script>
+    <noscript><a href="//www.51.la/?19258191" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/19258191.asp" style="border:none" /></a></noscript>
+	
+
+  </body>
 </html>

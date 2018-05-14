@@ -1,69 +1,60 @@
-# Resources settings
-source:      .
-layouts:     ./_layouts
-timezone:    Asia/Hongkong
+# Basic
+title: allen.wu
+subtitle: 个人网站
+description: 一只思考的猿.喜欢研究开源的RPC/MQ.
+# 头像里面的标题
+avatarTitle: allen.wu
+# 头像里面的描述
+avatarDesc: Java / Go / 分布式
+url: "http://baixin.io"
 
-# Site settings
-email: allenfancy520@gmail.com
-author: allen.wu
-owner_name: allen.wu
-github_username: allenfancy
-repo: allenfancy.github.io
+# Comment
+comment:
+    disqus: allen.wu
 
-#Server
-url: https://allenfancy.github.io
-github: https://github.com/allenfancy/
-baseurl: ""
+# Social
+social:
+    weibo: 2682299033
+    github: allenfancy
+    # twitter: 
+    mail: allenfancy520@gmail.com
 
-#Page settings
-future: true
-show_drafts: nil
-lsi: true
-published: false
-safe: false
-permalink: /:year/:month/:day/:title/
-markdown: kramdown
-excerpt_separator: '<!-- more -->'
+# 百度统计 
+# 使用博客模板请去掉或者更换 id 
+baidu:
+    id: 452d12928a8b77b1287fb6c4cc2eb286  
 
-exclude: ['README.md','Manifest.md']
-include: ['robots.txt']
+# Google Analytics
+# 使用博客模板请去掉或者更换 id
+ga:
+    id: UA-119193482-1
+    host: auto  
 
-# Description
-description: "只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog."
-# Keywords
-keywords:
-        - "github"
-        - "bootstrap"
-        - "blog"
-        - "joytou"
-        - "markdown"
-        - "jekyll"
-        - "博客"
-        - "个人博客"
-        - "博客模板"
-        
-#Update configuration
-versioncode: 1
-        #The current versioncode.
-versionname: "1.0.1"
-        #The current versionname.
-#remind: true
-        #Whether to remind you to upgrade the latest version when there is the latest version.
 
-#Others
-#Baidu
-BaiduSiteVerification: "eb6Z6IT34b"
-#Sogou
-SogouSiteVerification: "xhqLIE4SUI"
-#360
-360SiteVerification: "24cc2fe4596dc5c6885b587f8db09733"
-#51La
-51la: "19258191"
-51lamb: "1"
 
-coding_comments:
-  owner: 'joytou'
-  repo: 'JOYTOU'
-  oauth:
-    client_id: '624713aab28c44e0555b0e8d5d18dece'
-    client_secret: '5d2d45460648bfbd3b9f77bead1a0ac6aa7c3c95'
+permalink: /:year/:month/:title/
+# Format
+highlighter: rouge
+
+textColor: #FF0000
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: clear
+
+# The blog button should not be removed.
+blog_button:
+    title: 博客主页
+
+# Navigation buttons in the front page.s
+nav:
+    - {title: 所有文章, description: archive, url: '/archive'}   
+    - {title: 标签, description: tags, url: '/tags'}      
+    - {title: 关于我, description: about, url: '/about'}      
+    
+
+# Pagination
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 20
+paginate_path: "page/:num/"
+
+

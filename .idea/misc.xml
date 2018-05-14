@@ -3,4 +3,12 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/_site/404.html" />
+    <file url="file://$PROJECT_DIR$/_site/feed.xml" />
+    <file url="file://$PROJECT_DIR$/_site/hello51la85xb5y8e44uk4hs2.html" />
+    <file url="file://$PROJECT_DIR$/_site/index.html" />
+    <file url="file://$PROJECT_DIR$/_site/search.json" />
+    <file url="file://$PROJECT_DIR$/_site/sitemap.xml" />
+  </component>
 </project>

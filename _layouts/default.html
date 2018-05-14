@@ -1,49 +1,40 @@
 <!DOCTYPE html>
-<html{% if page.lang %}{% assign pgs = site.data.lang[page.lang] %} lang="{{ pgs.code }}"{% endif %}>
-<!--include head-->
-{% include head.html %}
+<html>
+
+  {% include head.html %}
+
   <body>
-	<!--include baidu push-->
-	<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-    </script>
-	<!--include 360 push-->
-    <script>
-    (function(){
-      var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?46c5b22d50e91c655840fa7e08751929":"https://jspassport.ssl.qhimg.com/11.0.1.js?46c5b22d50e91c655840fa7e08751929";
-      document.write('<script src="' + src + '" id="sozz"><\/script>');
-    })();
-    </script>
-    <!--include masthead-->
-    {% include masthead.html %}
-    <div class="container">
-      <!--include header-->
-      {% include header.html %}
-      <div class="row">
-        <div class="col-sm-8 blog-main">
-          <!--include post -->
-          {{ content }}
-        </div><!-- /.blog-main -->
-        <!--include category-->
-        {% include category.html %}
-		<!--include friendlinks-->
-		{% include friendlinks.html %}
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-	<!--include search-->
-	{% include search.html %}
-    <!--include foot-->
-    {% include foot.html %}
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">  {{site.blog_button.title}}
+              </a>
+            </i>
+            {% for item in site.nav %}
+                <i class="nav-menu-item">
+
+                  <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
+                      {{item.title}}
+                  </a>
+                </i>
+            {% endfor %}
+          </nav>
+      </div>
+    </span>
+    
+    {% include side-panel.html %}
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            {{ content }}
+            {% include footer.html %}
+        </div>
+    </div>
+    
+    {% include external.html %}
+    
   </body>
+
 </html>

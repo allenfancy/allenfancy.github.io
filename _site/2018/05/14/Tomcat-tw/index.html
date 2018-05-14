@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-Hant">
 <!--include head-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="title" content="demo1 - allen的技术博客" />
+	<meta name="title" content="Tomcat源码学习-整体架构-核心启动流程 - JOYTOU" />
     <meta name="description" content="只为博客而生，也因为博客而存在。Not only for the existence of the blog, but also because of the existence of the blog.">
     <meta name="keywords" content="github,bootstrap,blog,joytou,markdown,jekyll,博客,个人博客,博客模板">
     <meta name="author" content="allen.wu">
@@ -24,13 +24,13 @@
     <link rel="apple-touch-icon" href="/assets/logo.png">
     <link rel="icon" href="/assets/favicon-32.ico"> 
     <link rel="bookmark" href="/assets/favicon-128.ico" type="image/x-icon"　/>
-    <link rel="canonical" href="/2017/08/04/LOG/">
+    <link rel="canonical" href="/2018/05/14/Tomcat-tw/">
     <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
     <script src="/assets/js/jquery-3.2.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
        var $versioncode = 1;//当前版本号，请勿修改
-	   var $lang = "cn";
+	   var $lang = "tw";
 	   function JOYTOUdismiss(){//必须添加JOYTOUdismiss函数，而执行命令可为空
 	       //可选，当没有新版本时所执行的命令
 		   $("#JOYTOUupdate").alert('close');
@@ -42,7 +42,7 @@
     <script src="/assets/js/bootstrap3-typeahead.min.js"></script>
     <script src="/assets/js/cb-search.js"></script>
 	  
-    <title>demo1 - allen的技术博客</title>
+    <title>Tomcat源码学习-整体架构-核心启动流程 - JOYTOU</title>
 
     <!-- pictonic font icon css-->
     <link rel="stylesheet" href="/assets/css/pictonic.css">
@@ -98,26 +98,26 @@
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle" data-toggle="collapse"
 			data-target="#example-navbar-collapse">
-            <span class="sr-only">切换导航</span>
+            <span class="sr-only">切換導航</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="/cn/"><span><img src="/assets/logo.png" width="32px" alt="JOYTOU" style="margin-top: -6px"/> allen的技术博客</span></a>
+		  <a class="navbar-brand" href="/tw/"><span><img src="/assets/logo.png" width="32px" alt="JOYTOU" style="margin-top: -6px"/> JOYTOU</span></a>
 		</div>
 		<div class="collapse navbar-collapse" id="example-navbar-collapse">
 		  <ul class="nav navbar-nav">
-            <li class=""><a href="/cn/"><span class="glyphicon glyphicon-home"></span>首页</a></li>
-            <li class=""><a href="/cn/about/"><span class="glyphicon glyphicon-user"></span>关于我</a></li>
+            <li class=""><a href="/tw/"><span class="glyphicon glyphicon-home"></span>首頁</a></li>
+            <li class=""><a href="/tw/about/"><span class="glyphicon glyphicon-user"></span>關於</a></li>
             <li class="dropdowm active">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				  <span class="glyphicon glyphicon-sort-by-order-alt"></span>文章归档 <b class="caret"></b>
+				  <span class="glyphicon glyphicon-sort-by-order-alt"></span>文章歸檔 <b class="caret"></b>
                           </a>
 		          <ul class="dropdown-menu">
                                   
                   
                   
-					<li><a href="/cn/archives/#aa201708">2017-08</a></li>
+					<li><a href="/tw/archives/#aa201805">2018-05</a></li>
                   
                   
                         
@@ -141,27 +141,27 @@
             </li>
 			<li class="dropdowm">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章分类 <b class="caret"></b>
+				  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章分類 <b class="caret"></b>
                           </a>
 		          <ul class="dropdown-menu">
                 
-					<li><a href="/cn/categories/#aa原创">原创</a></li>
+					<li><a href="/tw/categories/#aa原创">原创</a></li>
                 
                           </ul>
             </li>
 			<li class="dropdowm">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章标签 <b class="caret"></b>
+				  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>文章標簽 <b class="caret"></b>
                           </a>
 		          <ul class="dropdown-menu">
                 
-					<li><a href="/cn/tags/#aatomcat">tomcat</a></li>
+					<li><a href="/tw/tags/#aatomcat">tomcat</a></li>
                 
                           </ul>
             </li>
 			<!--<li class="dropdown">
 			      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				  <span class="glyphicon glyphicon-hdd"></span>网站线路 <b class="caret"></b>
+				  <span class="glyphicon glyphicon-hdd"></span>網站線路 <b class="caret"></b>
 				  </a>
 				  <ul class="dropdown-menu">
 				  
@@ -173,22 +173,22 @@
 			</li>-->
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-transfer"></span>选择语言 <b class="caret"></b>
+				<span class="glyphicon glyphicon-transfer"></span>選擇語言 <b class="caret"></b>
 			  </a>
 			  <ul class="dropdown-menu">
 				
 				
-				<li class="active"><a href="/cn">简体中文</a></li>
+				<li class=""><a href="/cn">简体中文</a></li>
 				
 				
-				<li class=""><a href="/tw">繁體中文</a></li>
+				<li class="active"><a href="/tw">繁體中文</a></li>
 				
 				
 				<li class=""><a href="/en">English</a></li>
 				
 			  </ul>
 			</li>
-            <li class=""><a href="/feed.xml"><span class="icon-rss"></span>RSS 订阅</a></li>
+            <li class=""><a href="/feed.xml"><span class="icon-rss"></span>RSS 訂閱</a></li>
 		  </ul>
 		</div>
 	  </div>
@@ -198,8 +198,8 @@
       <!--include header-->
       
 <div class="blog-header">
-        <h1 class="blog-title">allen的技术博客</h1>
-        <p class="lead blog-description">Java、分布式、SpringFrameWork、中间件</p>
+        <h1 class="blog-title">JOYTOU</h1>
+        <p class="lead blog-description">此博客模板由Joytou通過Bootstrap創建</p>
 		  <!---->
       </div>
 
@@ -207,17 +207,225 @@
         <div class="col-sm-8 blog-main">
           <!--include post -->
           <div class="blog-post">
-            <h2 class="blog-post-title">demo1</h2>
+            <h2 class="blog-post-title">Tomcat源码学习-整体架构-核心启动流程</h2>
 			
-            <p class="blog-post-meta">最后由<a href="#">allen.wu</a>编辑于2017-11-14</p>
+            <p class="blog-post-meta">最后由<a href="#">allen.wu</a>编辑于2018-05-14</p>
 			
 			<p><span class="glyphicon glyphicon-bookmark"></span> <span class="label label-default">原创</span></p>
 			<p><span class="glyphicon glyphicon-tags"></span> <span class="label label-default">tomcat</span> </p>
             <ul id="markdown-toc">
-  <li><a href="#tomcat" id="markdown-toc-tomcat">tomcat</a></li>
+  <li><a href="#1-整体架构" id="markdown-toc-1-整体架构">1. 整体架构</a></li>
+  <li><a href="#2tomcat启动流程" id="markdown-toc-2tomcat启动流程">2.Tomcat启动流程</a></li>
+  <li><a href="#3tomcat请求处理流程" id="markdown-toc-3tomcat请求处理流程">3.Tomcat请求处理流程</a></li>
+  <li><a href="#4类加载器" id="markdown-toc-4类加载器">4.类加载器</a></li>
+  <li><a href="#5catalina-容器" id="markdown-toc-5catalina-容器">5.Catalina 容器</a></li>
+  <li><a href="#6web应用加载" id="markdown-toc-6web应用加载">6.Web应用加载</a></li>
+  <li><a href="#7tomcat请求处理过程" id="markdown-toc-7tomcat请求处理过程">7.Tomcat请求处理过程</a></li>
 </ul>
 
-<h5 id="tomcat">tomcat</h5>
+<p>Tomcat源码学习-整体架构-核心启动流程
+<!-- more --></p>
+
+<h3 id="1-整体架构">1. 整体架构</h3>
+<hr />
+
+<h3 id="2tomcat启动流程">2.Tomcat启动流程</h3>
+<pre><code class="language-seq">Bootstrap-&gt;Bootstrap:init
+Bootstrap-&gt;Bootstrap:load
+Bootstrap-&gt;Catalina:load
+Catalina-&gt;Catalina:创建server
+Catalina-&gt;Server:init
+Server-Service:init
+Service-&gt;Executor:init
+Service-&gt;Engine:init
+Engine-&gt;Host:init
+Host-&gt;Context:init
+Service-&gt;Connector:init
+Connector-&gt;ProtocolHandler:init
+Bootstrap-&gt;Bootstrap:start
+Bootstrap-&gt;Catalina:start
+Catalina-&gt;Server:start
+Server-&gt;Service:start
+Service-&gt;Executor:start
+Service-&gt;Engine:start
+Engine-&gt;Host:start
+Host-&gt;Context:start
+Service-&gt;Connector:start
+Connector-&gt;ProtocolHandler:start
+</code></pre>
+
+<hr />
+
+<h3 id="3tomcat请求处理流程">3.Tomcat请求处理流程</h3>
+
+<blockquote>
+  <p>下图仅仅简单的展示处理流程，实际的详细图，会在展示</p>
+</blockquote>
+
+<pre><code class="language-seq">Endpoint-&gt;Endpoint:接收请求
+Endpoint-&gt;Processor:处理()
+Processor-&gt;CoyoteAdapter:处理请求()
+CoyoteAdapter-&gt;Mapper:请求路径映射()
+CoyoteAdapter-&gt;Engine:获取第一个Valve,并执行()
+Engine-&gt;Host:获取请求匹配Host的第一个Valve并执行()
+Host-&gt;Context:获取请求匹配的Context的第一个Valve并执行()
+Context-&gt;Wrapper:获取请求匹配的Wrapper的第一个Valve并执行()
+Wrapper-&gt;Wrapper:构造FilterChain()
+Wrapper-&gt;FilterChain:执行()
+FilterChain-&gt;FilterChain:执行Filter()
+FilterChain-&gt;Servlet:执行Servlet()
+</code></pre>
+
+<h3 id="4类加载器">4.类加载器</h3>
+
+<blockquote>
+  <p>Tomcat的类加载层级设计以及Web应用的类加载过程。类加载是一切Java应用运行的基础。</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>J2SE标准类加载器</li>
+    <li>
+      <ul>
+        <li>Bootstrap : 用于加载JVM基础类。JAVA_HOME/jre/lib</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>Extension : JAVA_HOME/jre/lib/ext下的JAR包</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>System : 用于加载环境变量指定目录下的或者-classpath运行参数下的JAR包，</li>
+      </ul>
+    </li>
+    <li>Tomcat加载器</li>
+    <li>
+      <ul>
+        <li>隔离性:WEB应用类库相互隔离，避免依赖库或者应用包相互影响</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>灵活性</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>性能</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>大致架构
+Bootstrap class loader
+EXT       class loader
+System    Class loader
+Common    Class loader
+Catalina Class Loader    |    Shared Class Loader
+            Web App1 Class Loader | Web App2 Class Loader</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Common: 以System为父类加载器，是位于Tomcat应用服务器顶层的公用类加载器，路径为common.loader,默认是$CATALINA_HOME/lib下的包</li>
+    <li>Catalina:以Common为父加载器，是用于加载Tomcat应用服务器的类加载器，其路径为server.loader,默认为空。</li>
+    <li>Shared:以Common为父加载器，是所有Web应用的父加载器，其路径为shared.loader,此时Tomcat使用Common类加载器作为Web应用web应用的父加载器。</li>
+    <li>Web应用:以Shared为父加载器，加载WEB-INF/classes目录下的未压缩的Class和资源文件以及WEB-INF/lib目录下的Jar包。</li>
+  </ul>
+</blockquote>
+
+<h3 id="5catalina-容器">5.Catalina 容器</h3>
+<ol>
+  <li>创建server</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>1.Server的解析</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>
+      <ul>
+        <li>1.创建server实例</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>2.创建全局J2EE上下文</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>3.为Server添加生命周期监听器</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2.Engin解析</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>3.Host解析</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>4.Context解析</li>
+  </ul>
+</blockquote>
+
+<h3 id="6web应用加载">6.Web应用加载</h3>
+
+<blockquote>
+  <p>Web应用加载属于Server启动的核心处理过程。Catalina对于web应用的加载主要由StandardHost,HostConfig,StandardContext,ContextConfig,StandardWrapper</p>
+</blockquote>
+
+<pre><code class="language-seq">StandardHost-&gt;StandardHost:添加ErrorReportValve
+StandardHost-&gt;ContainerBase:super.startInternal()
+ContainerBase-&gt;ContainerBase:cluster.start
+ContainerBase-&gt;ContainerBase:realm.start
+ContainerBase-&gt;StandardContext:clildren.start
+ContainerBase-&gt;ContainerBase:pipline.start
+ContainerBase-&gt;HostConfig:fireLifecycleEvent(start event)
+ContainerBase-&gt;ContainerBase:启动后台线程
+HostConfig-&gt;HostConfig:deployDescriptor
+HostConfig-&gt;StandardHost:addChild(context)
+HostConfig-&gt;HostConfig:deployWARs
+HostConfig-&gt;StandardHost:addChild(context)
+HostConfig-&gt;HostConfig:deploy Direcotors
+HostConfig-&gt;StandardHost:addChild(context)
+</code></pre>
+
+<h3 id="7tomcat请求处理过程">7.Tomcat请求处理过程</h3>
+
+<blockquote>
+  <p>Pipeline 和Valve 接口用于责任链模式，增加灵活性</p>
+  <pre><code class="language-seq">CoyoteAdapter-&gt;StandardEngineValve:service()
+StandardEngineValve-&gt;StandardEngineValve:Engine.getPipeline().getFirst().invoke()
+StandardEngineValve-&gt;StandardHostValve:Host.getPipeline().getFirst().invoke()
+StandardHostValve-&gt;StandardHostValve:从请求中得到Context
+StandardHostValve-&gt;StandardContextValve:context.getPipeline().getFirst().invoke()
+StandardContextValve-&gt;StandardContextValve:从请求中获取Wrapper
+StandardContextValve-&gt;StandardWrapperValve:Wrapper.getPipeline().getFirst().invoke()
+StandardWrapperValve-&gt;StandardWrapperValve:构造FilterChain
+StandardWrapperValve-&gt;ApplcaitionFilterChain:执行Filter链
+ApplcaitionFilterChain-&gt;Servlet:SERVICE执行请求
+</code></pre>
+</blockquote>
+
 
 </div>
 <!--include post share-->
@@ -252,16 +460,16 @@
         
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>关于我</h4>
-            <p>Java、分布式</p>
+            <h4>關於</h4>
+            <p>JOYTOU是由我(Joytou)單獨完成的。如果您喜歡此模板，可以對此模板小額資助。</p>
           </div>
           <div class="sidebar-module">
-            <h4>文章归档</h4>
+            <h4>文章歸檔</h4>
             <ol class="list-unstyled">
                   
 				  
                   
-			  <li><a href="/cn/archives/#aa201708">2017-08</a></li>
+			  <li><a href="/tw/archives/#aa201805">2018-05</a></li>
                   
                   
                         
@@ -299,7 +507,7 @@
 <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
   <ul class="list-group">
 	<a class="list-group-item active">
-	  <h3 class="list-group-item-heading">友情链接</h3>
+	  <h3 class="list-group-item-heading">友情鏈接</h3>
 	</a>
 	
 	<li class="list-group-item"><a href="http://jekyllthemes.org/themes/JOYTOU/">Jekyll Themes</a></li>
@@ -308,7 +516,7 @@
 	
 	<li class="list-group-item"><a href="https://search.yahoo.com/search?p=joytou">雅虎</a></li>
 	
-	<li class="list-group-item"><a href="http://www.bing.com/search?q=joytou">必应</a></li>
+	<li class="list-group-item"><a href="http://www.bing.com/search?q=joytou">必應</a></li>
 	
 	<li class="list-group-item"><a href="https://www.sogou.com/web?query=joytou+blog">搜狗搜索</a></li>
 	
@@ -325,7 +533,7 @@
 	
 <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
   opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
-  <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="文章标题 标签 分类" >
+  <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="文章標題 標簽 分類" >
 
   <div style="position: fixed; top: 16px; right: 16px; font-size: 35px;">
 	<span class="glyphicon glyphicon-remove-circle" id="cb-close-btn"></span>
@@ -343,13 +551,13 @@
 <div class="blog-footer">
       <p>Copyright &copy; 2017 <a href="//joytou.net.cn/">Joytou</a></p>
       <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-      <p>此博客模板由<a href="//joytou.net.cn/">Joytou</a>通过<a href="http://getbootstrap.com">Bootstrap</a>创建。</p>
+      <p>此博客模板由<a href="//joytou.net.cn/">Joytou</a>通過<a href="http://getbootstrap.com">Bootstrap</a>創建。</p>
       <p>
-        <a href="#">返回顶部</a>
+        <a href="#">返回頂部</a>
       </p>
 	  
 	  <p>
-		总访问量：<script language="javascript" type="text/javascript" src="//quote.users.51.la/?id=19258191&amp;mb=1"></script>
+		總訪問量：<script language="javascript" type="text/javascript" src="//quote.users.51.la/?id=19258191&amp;mb=1"></script>
 	  </p>
 	  
     </div>

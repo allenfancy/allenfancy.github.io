@@ -5,21 +5,229 @@
     <description>一只思考的猿</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 May 2018 03:12:59 +0000</pubDate>
-    <lastBuildDate>Mon, 14 May 2018 03:12:59 +0000</lastBuildDate>
+    <pubDate>Mon, 14 May 2018 06:03:00 +0000</pubDate>
+    <lastBuildDate>Mon, 14 May 2018 06:03:00 +0000</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
-        <title>demo1</title>
+        <title>Tomcat源码学习-整体架构-核心启动流程</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tomcat&quot; id=&quot;markdown-toc-tomcat&quot;&gt;tomcat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-整体架构&quot; id=&quot;markdown-toc-1-整体架构&quot;&gt;1. 整体架构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2tomcat启动流程&quot; id=&quot;markdown-toc-2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3tomcat请求处理流程&quot; id=&quot;markdown-toc-3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4类加载器&quot; id=&quot;markdown-toc-4类加载器&quot;&gt;4.类加载器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5catalina-容器&quot; id=&quot;markdown-toc-5catalina-容器&quot;&gt;5.Catalina 容器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6web应用加载&quot; id=&quot;markdown-toc-6web应用加载&quot;&gt;6.Web应用加载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7tomcat请求处理过程&quot; id=&quot;markdown-toc-7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;tomcat&quot;&gt;tomcat&lt;/h5&gt;
+&lt;p&gt;Tomcat源码学习-整体架构-核心启动流程
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-整体架构&quot;&gt;1. 整体架构&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Bootstrap-&amp;gt;Bootstrap:init
+Bootstrap-&amp;gt;Bootstrap:load
+Bootstrap-&amp;gt;Catalina:load
+Catalina-&amp;gt;Catalina:创建server
+Catalina-&amp;gt;Server:init
+Server-Service:init
+Service-&amp;gt;Executor:init
+Service-&amp;gt;Engine:init
+Engine-&amp;gt;Host:init
+Host-&amp;gt;Context:init
+Service-&amp;gt;Connector:init
+Connector-&amp;gt;ProtocolHandler:init
+Bootstrap-&amp;gt;Bootstrap:start
+Bootstrap-&amp;gt;Catalina:start
+Catalina-&amp;gt;Server:start
+Server-&amp;gt;Service:start
+Service-&amp;gt;Executor:start
+Service-&amp;gt;Engine:start
+Engine-&amp;gt;Host:start
+Host-&amp;gt;Context:start
+Service-&amp;gt;Connector:start
+Connector-&amp;gt;ProtocolHandler:start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;下图仅仅简单的展示处理流程，实际的详细图，会在展示&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Endpoint-&amp;gt;Endpoint:接收请求
+Endpoint-&amp;gt;Processor:处理()
+Processor-&amp;gt;CoyoteAdapter:处理请求()
+CoyoteAdapter-&amp;gt;Mapper:请求路径映射()
+CoyoteAdapter-&amp;gt;Engine:获取第一个Valve,并执行()
+Engine-&amp;gt;Host:获取请求匹配Host的第一个Valve并执行()
+Host-&amp;gt;Context:获取请求匹配的Context的第一个Valve并执行()
+Context-&amp;gt;Wrapper:获取请求匹配的Wrapper的第一个Valve并执行()
+Wrapper-&amp;gt;Wrapper:构造FilterChain()
+Wrapper-&amp;gt;FilterChain:执行()
+FilterChain-&amp;gt;FilterChain:执行Filter()
+FilterChain-&amp;gt;Servlet:执行Servlet()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;4类加载器&quot;&gt;4.类加载器&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tomcat的类加载层级设计以及Web应用的类加载过程。类加载是一切Java应用运行的基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;J2SE标准类加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Bootstrap : 用于加载JVM基础类。JAVA_HOME/jre/lib&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Extension : JAVA_HOME/jre/lib/ext下的JAR包&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;System : 用于加载环境变量指定目录下的或者-classpath运行参数下的JAR包，&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Tomcat加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;隔离性:WEB应用类库相互隔离，避免依赖库或者应用包相互影响&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;灵活性&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;性能&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;大致架构
+Bootstrap class loader
+EXT       class loader
+System    Class loader
+Common    Class loader
+Catalina Class Loader    |    Shared Class Loader
+            Web App1 Class Loader | Web App2 Class Loader&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Common: 以System为父类加载器，是位于Tomcat应用服务器顶层的公用类加载器，路径为common.loader,默认是$CATALINA_HOME/lib下的包&lt;/li&gt;
+    &lt;li&gt;Catalina:以Common为父加载器，是用于加载Tomcat应用服务器的类加载器，其路径为server.loader,默认为空。&lt;/li&gt;
+    &lt;li&gt;Shared:以Common为父加载器，是所有Web应用的父加载器，其路径为shared.loader,此时Tomcat使用Common类加载器作为Web应用web应用的父加载器。&lt;/li&gt;
+    &lt;li&gt;Web应用:以Shared为父加载器，加载WEB-INF/classes目录下的未压缩的Class和资源文件以及WEB-INF/lib目录下的Jar包。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;5catalina-容器&quot;&gt;5.Catalina 容器&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建server&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.Server的解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;1.创建server实例&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;2.创建全局J2EE上下文&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;3.为Server添加生命周期监听器&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2.Engin解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;3.Host解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;4.Context解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;6web应用加载&quot;&gt;6.Web应用加载&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Web应用加载属于Server启动的核心处理过程。Catalina对于web应用的加载主要由StandardHost,HostConfig,StandardContext,ContextConfig,StandardWrapper&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;StandardHost-&amp;gt;StandardHost:添加ErrorReportValve
+StandardHost-&amp;gt;ContainerBase:super.startInternal()
+ContainerBase-&amp;gt;ContainerBase:cluster.start
+ContainerBase-&amp;gt;ContainerBase:realm.start
+ContainerBase-&amp;gt;StandardContext:clildren.start
+ContainerBase-&amp;gt;ContainerBase:pipline.start
+ContainerBase-&amp;gt;HostConfig:fireLifecycleEvent(start event)
+ContainerBase-&amp;gt;ContainerBase:启动后台线程
+HostConfig-&amp;gt;HostConfig:deployDescriptor
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deployWARs
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deploy Direcotors
+HostConfig-&amp;gt;StandardHost:addChild(context)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pipeline 和Valve 接口用于责任链模式，增加灵活性&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;CoyoteAdapter-&amp;gt;StandardEngineValve:service()
+StandardEngineValve-&amp;gt;StandardEngineValve:Engine.getPipeline().getFirst().invoke()
+StandardEngineValve-&amp;gt;StandardHostValve:Host.getPipeline().getFirst().invoke()
+StandardHostValve-&amp;gt;StandardHostValve:从请求中得到Context
+StandardHostValve-&amp;gt;StandardContextValve:context.getPipeline().getFirst().invoke()
+StandardContextValve-&amp;gt;StandardContextValve:从请求中获取Wrapper
+StandardContextValve-&amp;gt;StandardWrapperValve:Wrapper.getPipeline().getFirst().invoke()
+StandardWrapperValve-&amp;gt;StandardWrapperValve:构造FilterChain
+StandardWrapperValve-&amp;gt;ApplcaitionFilterChain:执行Filter链
+ApplcaitionFilterChain-&amp;gt;Servlet:SERVICE执行请求
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
 </description>
-        <pubDate>Fri, 04 Aug 2017 00:02:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/08/04/LOG/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/08/04/LOG/</guid>
+        <pubDate>Mon, 14 May 2018 00:02:00 +0000</pubDate>
+        <link>http://localhost:4000/2018/05/14/Tomcat/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/14/Tomcat/</guid>
         
          
          <category>tomcat</category>
@@ -33,16 +241,224 @@
       </item>
     
       <item>
-        <title>demo1</title>
+        <title>Tomcat源码学习-整体架构-核心启动流程</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tomcat&quot; id=&quot;markdown-toc-tomcat&quot;&gt;tomcat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-整体架构&quot; id=&quot;markdown-toc-1-整体架构&quot;&gt;1. 整体架构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2tomcat启动流程&quot; id=&quot;markdown-toc-2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3tomcat请求处理流程&quot; id=&quot;markdown-toc-3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4类加载器&quot; id=&quot;markdown-toc-4类加载器&quot;&gt;4.类加载器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5catalina-容器&quot; id=&quot;markdown-toc-5catalina-容器&quot;&gt;5.Catalina 容器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6web应用加载&quot; id=&quot;markdown-toc-6web应用加载&quot;&gt;6.Web应用加载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7tomcat请求处理过程&quot; id=&quot;markdown-toc-7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;tomcat&quot;&gt;tomcat&lt;/h5&gt;
+&lt;p&gt;Tomcat源码学习-整体架构-核心启动流程
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-整体架构&quot;&gt;1. 整体架构&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Bootstrap-&amp;gt;Bootstrap:init
+Bootstrap-&amp;gt;Bootstrap:load
+Bootstrap-&amp;gt;Catalina:load
+Catalina-&amp;gt;Catalina:创建server
+Catalina-&amp;gt;Server:init
+Server-Service:init
+Service-&amp;gt;Executor:init
+Service-&amp;gt;Engine:init
+Engine-&amp;gt;Host:init
+Host-&amp;gt;Context:init
+Service-&amp;gt;Connector:init
+Connector-&amp;gt;ProtocolHandler:init
+Bootstrap-&amp;gt;Bootstrap:start
+Bootstrap-&amp;gt;Catalina:start
+Catalina-&amp;gt;Server:start
+Server-&amp;gt;Service:start
+Service-&amp;gt;Executor:start
+Service-&amp;gt;Engine:start
+Engine-&amp;gt;Host:start
+Host-&amp;gt;Context:start
+Service-&amp;gt;Connector:start
+Connector-&amp;gt;ProtocolHandler:start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;下图仅仅简单的展示处理流程，实际的详细图，会在展示&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Endpoint-&amp;gt;Endpoint:接收请求
+Endpoint-&amp;gt;Processor:处理()
+Processor-&amp;gt;CoyoteAdapter:处理请求()
+CoyoteAdapter-&amp;gt;Mapper:请求路径映射()
+CoyoteAdapter-&amp;gt;Engine:获取第一个Valve,并执行()
+Engine-&amp;gt;Host:获取请求匹配Host的第一个Valve并执行()
+Host-&amp;gt;Context:获取请求匹配的Context的第一个Valve并执行()
+Context-&amp;gt;Wrapper:获取请求匹配的Wrapper的第一个Valve并执行()
+Wrapper-&amp;gt;Wrapper:构造FilterChain()
+Wrapper-&amp;gt;FilterChain:执行()
+FilterChain-&amp;gt;FilterChain:执行Filter()
+FilterChain-&amp;gt;Servlet:执行Servlet()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;4类加载器&quot;&gt;4.类加载器&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tomcat的类加载层级设计以及Web应用的类加载过程。类加载是一切Java应用运行的基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;J2SE标准类加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Bootstrap : 用于加载JVM基础类。JAVA_HOME/jre/lib&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Extension : JAVA_HOME/jre/lib/ext下的JAR包&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;System : 用于加载环境变量指定目录下的或者-classpath运行参数下的JAR包，&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Tomcat加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;隔离性:WEB应用类库相互隔离，避免依赖库或者应用包相互影响&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;灵活性&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;性能&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;大致架构
+Bootstrap class loader
+EXT       class loader
+System    Class loader
+Common    Class loader
+Catalina Class Loader    |    Shared Class Loader
+            Web App1 Class Loader | Web App2 Class Loader&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Common: 以System为父类加载器，是位于Tomcat应用服务器顶层的公用类加载器，路径为common.loader,默认是$CATALINA_HOME/lib下的包&lt;/li&gt;
+    &lt;li&gt;Catalina:以Common为父加载器，是用于加载Tomcat应用服务器的类加载器，其路径为server.loader,默认为空。&lt;/li&gt;
+    &lt;li&gt;Shared:以Common为父加载器，是所有Web应用的父加载器，其路径为shared.loader,此时Tomcat使用Common类加载器作为Web应用web应用的父加载器。&lt;/li&gt;
+    &lt;li&gt;Web应用:以Shared为父加载器，加载WEB-INF/classes目录下的未压缩的Class和资源文件以及WEB-INF/lib目录下的Jar包。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;5catalina-容器&quot;&gt;5.Catalina 容器&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建server&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.Server的解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;1.创建server实例&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;2.创建全局J2EE上下文&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;3.为Server添加生命周期监听器&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2.Engin解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;3.Host解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;4.Context解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;6web应用加载&quot;&gt;6.Web应用加载&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Web应用加载属于Server启动的核心处理过程。Catalina对于web应用的加载主要由StandardHost,HostConfig,StandardContext,ContextConfig,StandardWrapper&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;StandardHost-&amp;gt;StandardHost:添加ErrorReportValve
+StandardHost-&amp;gt;ContainerBase:super.startInternal()
+ContainerBase-&amp;gt;ContainerBase:cluster.start
+ContainerBase-&amp;gt;ContainerBase:realm.start
+ContainerBase-&amp;gt;StandardContext:clildren.start
+ContainerBase-&amp;gt;ContainerBase:pipline.start
+ContainerBase-&amp;gt;HostConfig:fireLifecycleEvent(start event)
+ContainerBase-&amp;gt;ContainerBase:启动后台线程
+HostConfig-&amp;gt;HostConfig:deployDescriptor
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deployWARs
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deploy Direcotors
+HostConfig-&amp;gt;StandardHost:addChild(context)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pipeline 和Valve 接口用于责任链模式，增加灵活性&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;CoyoteAdapter-&amp;gt;StandardEngineValve:service()
+StandardEngineValve-&amp;gt;StandardEngineValve:Engine.getPipeline().getFirst().invoke()
+StandardEngineValve-&amp;gt;StandardHostValve:Host.getPipeline().getFirst().invoke()
+StandardHostValve-&amp;gt;StandardHostValve:从请求中得到Context
+StandardHostValve-&amp;gt;StandardContextValve:context.getPipeline().getFirst().invoke()
+StandardContextValve-&amp;gt;StandardContextValve:从请求中获取Wrapper
+StandardContextValve-&amp;gt;StandardWrapperValve:Wrapper.getPipeline().getFirst().invoke()
+StandardWrapperValve-&amp;gt;StandardWrapperValve:构造FilterChain
+StandardWrapperValve-&amp;gt;ApplcaitionFilterChain:执行Filter链
+ApplcaitionFilterChain-&amp;gt;Servlet:SERVICE执行请求
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
 </description>
-        <pubDate>Fri, 04 Aug 2017 00:02:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/08/04/LOG-tw/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/08/04/LOG-tw/</guid>
+        <pubDate>Mon, 14 May 2018 00:02:00 +0000</pubDate>
+        <link>http://localhost:4000/2018/05/14/Tomcat-tw/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/14/Tomcat-tw/</guid>
         
          
          <category>tomcat</category>
@@ -56,16 +472,224 @@
       </item>
     
       <item>
-        <title>demo1</title>
+        <title>Tomcat源码学习-整体架构-核心启动流程</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tomcat&quot; id=&quot;markdown-toc-tomcat&quot;&gt;tomcat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-整体架构&quot; id=&quot;markdown-toc-1-整体架构&quot;&gt;1. 整体架构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2tomcat启动流程&quot; id=&quot;markdown-toc-2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3tomcat请求处理流程&quot; id=&quot;markdown-toc-3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4类加载器&quot; id=&quot;markdown-toc-4类加载器&quot;&gt;4.类加载器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5catalina-容器&quot; id=&quot;markdown-toc-5catalina-容器&quot;&gt;5.Catalina 容器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6web应用加载&quot; id=&quot;markdown-toc-6web应用加载&quot;&gt;6.Web应用加载&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7tomcat请求处理过程&quot; id=&quot;markdown-toc-7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;tomcat&quot;&gt;tomcat&lt;/h5&gt;
+&lt;p&gt;Tomcat源码学习-整体架构-核心启动流程
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-整体架构&quot;&gt;1. 整体架构&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2tomcat启动流程&quot;&gt;2.Tomcat启动流程&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Bootstrap-&amp;gt;Bootstrap:init
+Bootstrap-&amp;gt;Bootstrap:load
+Bootstrap-&amp;gt;Catalina:load
+Catalina-&amp;gt;Catalina:创建server
+Catalina-&amp;gt;Server:init
+Server-Service:init
+Service-&amp;gt;Executor:init
+Service-&amp;gt;Engine:init
+Engine-&amp;gt;Host:init
+Host-&amp;gt;Context:init
+Service-&amp;gt;Connector:init
+Connector-&amp;gt;ProtocolHandler:init
+Bootstrap-&amp;gt;Bootstrap:start
+Bootstrap-&amp;gt;Catalina:start
+Catalina-&amp;gt;Server:start
+Server-&amp;gt;Service:start
+Service-&amp;gt;Executor:start
+Service-&amp;gt;Engine:start
+Engine-&amp;gt;Host:start
+Host-&amp;gt;Context:start
+Service-&amp;gt;Connector:start
+Connector-&amp;gt;ProtocolHandler:start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3tomcat请求处理流程&quot;&gt;3.Tomcat请求处理流程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;下图仅仅简单的展示处理流程，实际的详细图，会在展示&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Endpoint-&amp;gt;Endpoint:接收请求
+Endpoint-&amp;gt;Processor:处理()
+Processor-&amp;gt;CoyoteAdapter:处理请求()
+CoyoteAdapter-&amp;gt;Mapper:请求路径映射()
+CoyoteAdapter-&amp;gt;Engine:获取第一个Valve,并执行()
+Engine-&amp;gt;Host:获取请求匹配Host的第一个Valve并执行()
+Host-&amp;gt;Context:获取请求匹配的Context的第一个Valve并执行()
+Context-&amp;gt;Wrapper:获取请求匹配的Wrapper的第一个Valve并执行()
+Wrapper-&amp;gt;Wrapper:构造FilterChain()
+Wrapper-&amp;gt;FilterChain:执行()
+FilterChain-&amp;gt;FilterChain:执行Filter()
+FilterChain-&amp;gt;Servlet:执行Servlet()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;4类加载器&quot;&gt;4.类加载器&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tomcat的类加载层级设计以及Web应用的类加载过程。类加载是一切Java应用运行的基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;J2SE标准类加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Bootstrap : 用于加载JVM基础类。JAVA_HOME/jre/lib&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Extension : JAVA_HOME/jre/lib/ext下的JAR包&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;System : 用于加载环境变量指定目录下的或者-classpath运行参数下的JAR包，&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Tomcat加载器&lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;隔离性:WEB应用类库相互隔离，避免依赖库或者应用包相互影响&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;灵活性&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;性能&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;大致架构
+Bootstrap class loader
+EXT       class loader
+System    Class loader
+Common    Class loader
+Catalina Class Loader    |    Shared Class Loader
+            Web App1 Class Loader | Web App2 Class Loader&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Common: 以System为父类加载器，是位于Tomcat应用服务器顶层的公用类加载器，路径为common.loader,默认是$CATALINA_HOME/lib下的包&lt;/li&gt;
+    &lt;li&gt;Catalina:以Common为父加载器，是用于加载Tomcat应用服务器的类加载器，其路径为server.loader,默认为空。&lt;/li&gt;
+    &lt;li&gt;Shared:以Common为父加载器，是所有Web应用的父加载器，其路径为shared.loader,此时Tomcat使用Common类加载器作为Web应用web应用的父加载器。&lt;/li&gt;
+    &lt;li&gt;Web应用:以Shared为父加载器，加载WEB-INF/classes目录下的未压缩的Class和资源文件以及WEB-INF/lib目录下的Jar包。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;5catalina-容器&quot;&gt;5.Catalina 容器&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建server&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1.Server的解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;1.创建server实例&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;2.创建全局J2EE上下文&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;3.为Server添加生命周期监听器&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;2.Engin解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;3.Host解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;4.Context解析&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;6web应用加载&quot;&gt;6.Web应用加载&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Web应用加载属于Server启动的核心处理过程。Catalina对于web应用的加载主要由StandardHost,HostConfig,StandardContext,ContextConfig,StandardWrapper&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;StandardHost-&amp;gt;StandardHost:添加ErrorReportValve
+StandardHost-&amp;gt;ContainerBase:super.startInternal()
+ContainerBase-&amp;gt;ContainerBase:cluster.start
+ContainerBase-&amp;gt;ContainerBase:realm.start
+ContainerBase-&amp;gt;StandardContext:clildren.start
+ContainerBase-&amp;gt;ContainerBase:pipline.start
+ContainerBase-&amp;gt;HostConfig:fireLifecycleEvent(start event)
+ContainerBase-&amp;gt;ContainerBase:启动后台线程
+HostConfig-&amp;gt;HostConfig:deployDescriptor
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deployWARs
+HostConfig-&amp;gt;StandardHost:addChild(context)
+HostConfig-&amp;gt;HostConfig:deploy Direcotors
+HostConfig-&amp;gt;StandardHost:addChild(context)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;7tomcat请求处理过程&quot;&gt;7.Tomcat请求处理过程&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pipeline 和Valve 接口用于责任链模式，增加灵活性&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;CoyoteAdapter-&amp;gt;StandardEngineValve:service()
+StandardEngineValve-&amp;gt;StandardEngineValve:Engine.getPipeline().getFirst().invoke()
+StandardEngineValve-&amp;gt;StandardHostValve:Host.getPipeline().getFirst().invoke()
+StandardHostValve-&amp;gt;StandardHostValve:从请求中得到Context
+StandardHostValve-&amp;gt;StandardContextValve:context.getPipeline().getFirst().invoke()
+StandardContextValve-&amp;gt;StandardContextValve:从请求中获取Wrapper
+StandardContextValve-&amp;gt;StandardWrapperValve:Wrapper.getPipeline().getFirst().invoke()
+StandardWrapperValve-&amp;gt;StandardWrapperValve:构造FilterChain
+StandardWrapperValve-&amp;gt;ApplcaitionFilterChain:执行Filter链
+ApplcaitionFilterChain-&amp;gt;Servlet:SERVICE执行请求
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
 </description>
-        <pubDate>Fri, 04 Aug 2017 00:02:00 +0000</pubDate>
-        <link>http://localhost:4000/2017/08/04/LOG-en/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/08/04/LOG-en/</guid>
+        <pubDate>Mon, 14 May 2018 00:02:00 +0000</pubDate>
+        <link>http://localhost:4000/2018/05/14/Tomcat-en/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/14/Tomcat-en/</guid>
         
          
          <category>tomcat</category>

@@ -4,7 +4,7 @@ xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
     <url> 
         <loc>http://localhost:4000/index.html</loc> 
         <mobile:mobile type="pc,mobile"/>
-        <lastmod>2018-05-14T03:12:12+00:00</lastmod>
+        <lastmod>2018-05-14T03:12:59+00:00</lastmod>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url> 

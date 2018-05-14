@@ -171,8 +171,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allen技术博客 - 一只思考的猿</find>
-      <find>Your awesome title</find>
+      <find />
+      <find />
       <find>JOYTOU是由我(Joytou)单独完成的。如果您喜欢此模板，可以对此模板小额资助。</find>
       <find>JOYTOU</find>
       <find>/assets/logo.png</find>
@@ -180,7 +180,7 @@
       <find>一个热爱</find>
       <find>一个热爱折腾、不肯休息的业余程序员</find>
       <find>选择</find>
-      <find>Blog template的更新日志</find>
+      <find />
       <find>其它位置</find>
       <find>友情链接</find>
     </findStrings>
@@ -219,10 +219,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1463" />
-    <option name="y" value="-217" />
-    <option name="width" value="1644" />
-    <option name="height" value="876" />
+    <option name="x" value="1392" />
+    <option name="y" value="-290" />
+    <option name="width" value="1713" />
+    <option name="height" value="988" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">

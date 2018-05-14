@@ -3,83 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da3bb93a-4b03-40ed-85d1-90479318103a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-05-14-Tomcat-en.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2018-05-13-CP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-05-14-Tomcat-tw.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/05/14/Tomcat-en/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/05/14/Tomcat-tw/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/05/14/Tomcat/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/Mainfest.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/app/category.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/app/post.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/app/tag.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/ScreenshortDemo/mo_cn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/ScreenshortDemo/mo_en.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/ScreenshortDemo/pc_cn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/ScreenshortDemo/pc_en.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/cb-search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/pictonic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/favicon-128.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/favicon-16.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/favicon-32.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/favicon-48.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/favicon-64.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/font/pictonic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/font/pictonic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/font/pictonic.svgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/font/pictonic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/font/pictonic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/archive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/bootstrap3-typeahead.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/cb-search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/docs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/languages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/pictonic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/pictonic.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/mmqrcode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/qqqrcode.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/baidu-verify-F5956EE664.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cn/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cn/archives/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cn/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cn/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cn/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/en/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/en/archives/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/en/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/en/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/en/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/hello51la85xb5y8e44uk4hs2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/search.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tw/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tw/archives/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tw/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tw/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tw/tags/index.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -111,11 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-05-13-CP.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-05-13-CP.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-05-13-CP.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="477">
               <caret line="68" column="15" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -165,6 +97,7 @@
         <option value="$PROJECT_DIR$/_posts/2018-05-14-cp.md" />
         <option value="$PROJECT_DIR$/_posts/2018-05-13-cp.md" />
         <option value="$PROJECT_DIR$/_posts/2018-05-13-CP.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -178,8 +111,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1392" />
-    <option name="y" value="-290" />
+    <option name="x" value="1561" />
+    <option name="y" value="-294" />
     <option name="width" value="1713" />
     <option name="height" value="988" />
   </component>
@@ -194,62 +127,6 @@
             <path>
               <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="2018" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="2018" type="462c0819:PsiDirectoryNode" />
-              <item name="05" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="2018" type="462c0819:PsiDirectoryNode" />
-              <item name="05" type="462c0819:PsiDirectoryNode" />
-              <item name="14" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="tags" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -300,10 +177,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4628000" />
+    <option name="totallyTimeSpent" value="4760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1392" y="-290" width="1713" height="988" extended-state="0" />
+    <frame x="1561" y="-294" width="1713" height="988" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18203309" />
@@ -344,11 +221,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.cn.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -661,6 +533,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="68" column="15" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>

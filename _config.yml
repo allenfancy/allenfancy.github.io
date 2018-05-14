@@ -19,13 +19,9 @@ social:
     # twitter: 
     mail: allenfancy520@gmail.com
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
 baidu:
     id: 452d12928a8b77b1287fb6c4cc2eb286  
 
-# Google Analytics
-# 使用博客模板请去掉或者更换 id
 ga:
     id: UA-119193482-1
     host: auto  

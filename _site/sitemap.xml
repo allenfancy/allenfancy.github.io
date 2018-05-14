@@ -4,42 +4,10 @@ xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
     <url> 
         <loc>http://localhost:4000/index.html</loc> 
         <mobile:mobile type="pc,mobile"/>
-        <lastmod>2018-05-13T16:47:48+00:00</lastmod>
+        <lastmod>2018-05-14T03:12:12+00:00</lastmod>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url> 
-
-    <url>
-        <loc>http://localhost:4000/2017/08/07/multiple-languages/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2017-08-07T02:08:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2017/08/07/multiple-languages-tw/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2017-08-07T02:08:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2017/08/07/multiple-languages-en/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2017-08-07T02:08:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2017/08/04/LOG-en/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2017-08-04T00:02:08+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
 
     <url>
         <loc>http://localhost:4000/2017/08/04/LOG/</loc>
@@ -58,73 +26,9 @@ xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
     </url>
 
     <url>
-        <loc>http://localhost:4000/2015/06/08/for-testing-the-archive/</loc>
+        <loc>http://localhost:4000/2017/08/04/LOG-en/</loc>
         <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-06-08T06:25:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2015/06/08/for-testing-the-archive-tw/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-06-08T06:25:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2015/06/08/for-testing-the-archive-en/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-06-08T06:25:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2015/04/05/test-article/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-04-05T00:00:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2015/04/05/test-article-tw/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-04-05T00:00:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/2015/04/05/test-article-en/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>2015-04-05T00:00:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/1997/06/08/another-for-testing-the-archive/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>1997-06-08T06:20:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/1997/06/08/another-for-testing-the-archive-tw/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>1997-06-08T06:20:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>http://localhost:4000/1997/06/08/another-for-testing-the-archive-en/</loc>
-        <mobile:mobile type="pc,mobile"/>
-        <lastmod>1997-06-08T06:20:00+00:00</lastmod>
+        <lastmod>2017-08-04T00:02:00+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>

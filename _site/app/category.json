@@ -4,216 +4,44 @@
 "data":[
 
 {
-"category":"test",
+"category":"原创",
 "posts":[
-
-{
-"id":"/2015/06/08/for-testing-the-archive",
-"title":"测试归档功能",
-"summary":"测试归档功能",
-"date":"2015-06-08 06:25:00 +0000",
-"update":"2015-06-08 06:25:00 +0000",
-"lang":"cn",
-"path":"_posts/2015-06-08-for-testing-the-archive.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-06-08-for-testing-the-archive.md"
-
-}, 
-
-
-{
-"id":"/2015/06/08/for-testing-the-archive-tw",
-"title":"測試歸檔功能",
-"summary":"測試歸檔功能",
-"date":"2015-06-08 06:25:00 +0000",
-"update":"2015-06-08 06:25:00 +0000",
-"lang":"tw",
-"path":"_posts/2015-06-08-for-testing-the-archive-tw.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-06-08-for-testing-the-archive-tw.md"
-
-}, 
-
-
-{
-"id":"/2015/06/08/for-testing-the-archive-en",
-"title":"For testing the archive",
-"summary":"Testing the archive function",
-"date":"2015-06-08 06:25:00 +0000",
-"update":"2015-06-08 06:25:00 +0000",
-"lang":"en",
-"path":"_posts/2015-06-08-for-testing-the-archive-en.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-06-08-for-testing-the-archive-en.md"
-
-}, 
-
-
-{
-"id":"/2015/04/05/test-article",
-"title":"测试文章",
-"summary":"请在这儿写文章",
-"date":"2015-04-05 00:00:00 +0000",
-"update":"2015-04-05 00:00:00 +0000",
-"lang":"cn",
-"path":"_posts/2015-04-05-test-article.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-04-05-test-article.md"
-
-}, 
-
-
-{
-"id":"/2015/04/05/test-article-tw",
-"title":"測試文章",
-"summary":"請在這兒寫文章",
-"date":"2015-04-05 00:00:00 +0000",
-"update":"2015-04-05 00:00:00 +0000",
-"lang":"tw",
-"path":"_posts/2015-04-05-test-article-tw.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-04-05-test-article-tw.md"
-
-}, 
-
-
-{
-"id":"/2015/04/05/test-article-en",
-"title":"Testing article",
-"summary":"Writting the article here.",
-"date":"2015-04-05 00:00:00 +0000",
-"update":"2015-04-05 00:00:00 +0000",
-"lang":"en",
-"path":"_posts/2015-04-05-test-article-en.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2015-04-05-test-article-en.md"
-
-}, 
-
-
-{
-"id":"/1997/06/08/another-for-testing-the-archive",
-"title":"测试文章归档功能",
-"summary":"另一篇测试文章归档功能的文章",
-"date":"1997-06-08 06:20:00 +0000",
-"update":"1997-06-08 06:20:00 +0000",
-"lang":"cn",
-"path":"_posts/1997-06-08-another-for-testing-the-archive.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/1997-06-08-another-for-testing-the-archive.md"
-
-}, 
-
-
-{
-"id":"/1997/06/08/another-for-testing-the-archive-tw",
-"title":"測試文章歸檔功能",
-"summary":"另一篇測試文章歸檔功能的文章",
-"date":"1997-06-08 06:20:00 +0000",
-"update":"1997-06-08 06:20:00 +0000",
-"lang":"tw",
-"path":"_posts/1997-06-08-another-for-testing-the-archive-tw.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/1997-06-08-another-for-testing-the-archive-tw.md"
-
-}, 
-
-
-{
-"id":"/1997/06/08/another-for-testing-the-archive-en",
-"title":"For testing the archive",
-"summary":"Another for testing the archive",
-"date":"1997-06-08 06:20:00 +0000",
-"update":"1997-06-08 06:20:00 +0000",
-"lang":"en",
-"path":"_posts/1997-06-08-another-for-testing-the-archive-en.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/1997-06-08-another-for-testing-the-archive-en.md"
-
-} 
-
-
-]
-}
-,
-
-{
-"category":"official",
-"posts":[
-
-{
-"id":"/2017/08/04/LOG-en",
-"title":"The log for JOYTOU-Blog template",
-"summary":"JOYTOU’s lastest version v-1.0.1",
-"date":"2017-08-04 00:02:08 +0000",
-"update":"2017-11-14 03:20:40 +0000",
-"lang":"en",
-"path":"_posts/2017-08-04-LOG-en.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-04-LOG-en.md"
-
-}, 
-
 
 {
 "id":"/2017/08/04/LOG",
-"title":"JOYTOU-Blog template的更新日志",
-"summary":"JOYTOU最新版本发布V-1.0.1",
+"title":"demo1",
+"summary":"  tomcattomcat",
 "date":"2017-08-04 00:02:00 +0000",
 "update":"2017-11-14 03:20:40 +0000",
 "lang":"cn",
 "path":"_posts/2017-08-04-LOG.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-04-LOG.md"
+"url":"https://raw.githubusercontent.com/allenfancy/allenfancy.github.io/master/_posts/2017-08-04-LOG.md"
 
 }, 
 
 
 {
 "id":"/2017/08/04/LOG-tw",
-"title":"JOYTOU-Blog template的更新日誌",
-"summary":"JOYTOU最新版本發布V-1.0.1",
+"title":"demo1",
+"summary":"  tomcattomcat",
 "date":"2017-08-04 00:02:00 +0000",
 "update":"2017-11-14 03:20:40 +0000",
 "lang":"tw",
 "path":"_posts/2017-08-04-LOG-tw.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-04-LOG-tw.md"
-
-} 
-
-
-]
-}
-,
-
-{
-"category":"personal",
-"posts":[
-
-{
-"id":"/2017/08/07/multiple-languages",
-"title":"为Jekyll网站添加多语言功能",
-"summary":"如何为Jekyll网站无插件式的添加多语言功能？",
-"date":"2017-08-07 02:08:00 +0000",
-"update":"2017-08-07 02:08:00 +0000",
-"lang":"cn",
-"path":"_posts/2017-08-07-multiple-languages.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-07-multiple-languages.md"
+"url":"https://raw.githubusercontent.com/allenfancy/allenfancy.github.io/master/_posts/2017-08-04-LOG-tw.md"
 
 }, 
 
 
 {
-"id":"/2017/08/07/multiple-languages-tw",
-"title":"爲Jekyll網站添加多語言功能",
-"summary":"如何爲Jekyll網站無插件式的添加多語言功能？",
-"date":"2017-08-07 02:08:00 +0000",
-"update":"2017-08-07 02:08:00 +0000",
-"lang":"tw",
-"path":"_posts/2017-08-07-multiple-languages-tw.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-07-multiple-languages-tw.md"
-
-}, 
-
-
-{
-"id":"/2017/08/07/multiple-languages-en",
-"title":"Add multiple languages for Jekyll web site",
-"summary":"How to add multiple language function without plugin for the Jekyll web site?",
-"date":"2017-08-07 02:08:00 +0000",
-"update":"2017-08-07 02:08:00 +0000",
+"id":"/2017/08/04/LOG-en",
+"title":"demo1",
+"summary":"  tomcattomcat",
+"date":"2017-08-04 00:02:00 +0000",
+"update":"2017-11-14 03:20:40 +0000",
 "lang":"en",
-"path":"_posts/2017-08-07-multiple-languages-en.md",
-"url":"https://raw.githubusercontent.com/joytou/JOYTOU/master/_posts/2017-08-07-multiple-languages-en.md"
+"path":"_posts/2017-08-04-LOG-en.md",
+"url":"https://raw.githubusercontent.com/allenfancy/allenfancy.github.io/master/_posts/2017-08-04-LOG-en.md"
 
 } 
 

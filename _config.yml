@@ -4,16 +4,15 @@ layouts:     ./_layouts
 timezone:    Asia/Hongkong
 
 # Site settings
-email: 1540294142@qq.com
-author: Joytou Wu
-owner_name: Joytou Wu
-github_username: joytou
-repo: JOYTOU
+email: allenfancy520@gmail.com
+author: allen.wu
+owner_name: allen.wu
+github_username: allenfancy
+repo: allenfancy.github.io
 
 #Server
-url: http://joytou.nets.hk
-github: https://github.com/joytou/
-coding: https://coding.net/joytou/
+url: https://allenfancy.github.io
+github: https://github.com/allenfancy/
 baseurl: ""
 
 #Page settings

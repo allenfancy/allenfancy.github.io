@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "maven生命周期"
-date: 2014-10-01 
-description: "maven生命周期的总结"
+title: "redis-java客户端对比"
+date: 2015-05-02 
+description: "redis-java客户端对比"
 tag: 分布式缓存 
 ---   
 

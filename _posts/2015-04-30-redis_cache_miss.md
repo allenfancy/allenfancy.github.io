@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "maven生命周期"
-date: 2014-10-01 
-description: "maven生命周期的总结"
+title: "redis缓存失效策略"
+date: 2015-04-30
+description: "redis缓存失效策略"
 tag: 分布式缓存 
 ---   
 

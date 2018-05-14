@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "maven生命周期"
-date: 2014-10-01 
-description: "maven生命周期的总结"
+title: "redis-pub/sub"
+date: 2015-04-18 
+description: "redis-pub/sub"
 tag: 分布式缓存 
 ---   
 

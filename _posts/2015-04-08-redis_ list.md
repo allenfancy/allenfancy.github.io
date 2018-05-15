@@ -7,44 +7,29 @@ tag: 分布式缓存
 ---   
 
 
-### 1.生命周期详解
-    clean生命周期:
-        1.pre-clean执行一些清理前需要完成工作
-        2.clean 清理上一次构件生成的文件
-        3.post-clean执行一些清理后需要完成的工作
-        default生命周期：
-            default生命周期定义了真正构建时所需要执行的步奏，它是所有生命周期中最核心的部门，其包含的阶段如下：
-            validate:
-            initialize：
-            generate-sources：
-            process-sources:编译项目的资源文件，一般来说，是编译src/main/resources目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            generate-resources：
-            process-resources：
-            compile 编译项目的主源码，一般来说，是编译src/mainjava目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            process-classes：
-            generate-test-sources：
-            process-test-sources:
-            test-compile:
-            prepare-package:
-            package:
-            pre-integration-test:
-            integration-test:
-            post-integration-test:
-            verify：
-            install：将包安装到Maven本地仓库，供本地其他Maven项目使用
-            deploy:将最终的包复制到远程仓库；供其他开发人员和Maven项目使用
+
+### 1. Redis数据结构-List
+        list是一个链表结构，主要功能是push pop 获取一个范围的所有值等等，操作中key理解为链表的名字Redis的list类型其实就是一个每个子元素都是string类型的双向链表。
+        链表的最大长度为2^32。可以通过Push pop操作从链表的头部或者尾部添加删除元素。这样使得list既可以用作栈，也可以用做队列关于list的pop操作还有阻塞版本的，当我们lrpop一个list对象时，如果list是空，或者不存在，会立即返回nil。但是阻塞版本的，可以添加超时时间，超时后会返回nil。为什么要阻塞版本的pop呢？主要是为了避免轮询。
+
+### 2.命令
+    1.lpush        在key对应的list的头部添加字符串元素
+    2.rpush        在key对应的list的尾部添加字符串元素
+                   先在list尾部插入一个hello,然后在hello的尾部插入一个world
+    3.linsert      在key对应list的特定位置之前或之后添加字符串元素
+    4.lset         设置list中指定下标的元素值(下标从0开始)
+    5.lrem         从key对应list中删除count个和value相同的元素
+                   count>0时，按从头到尾的顺序删除
+                   count<0时，按从尾到头的顺序删除
+                   count=0时，删除全部
+    6.ltrim        保留指定key的值范围内的数据
+    7.lpop         从list的头部删除元素，并返回删除元素
+    8.rpop         从list的尾部删除元素，并返回删除元素
+    9.rpoplpush    从第一个list的尾部移除元素并添加到第二个list的头部，最后返回被移除的元素值，整个操作是原子的，如果第一个list是空或者不存在则返回nil
+    10.lindex      返回名称为key的list中index位置的元素
+    11.llen        返回key对应list的长度
+    
+### 3.数据结构
 
 
-### 2.site生命周期：
-    site生命 周期的目的是建立和发布项目站点，Maven能够给予POM所包含的信息，自动生成一个友好的站点。生命周期如下：
-    #pre-site:执行一些在生成项目站点之前需要完成的工作
-    #site ：生成项目站点文档
-    #post-site:执行一些在生成项目站点之后需要完成的工作
-    #post-deploy :将生成的项目站点发布到服务器上
- 
-### 3.命令行与生命周期
-    从命令行执行Maven任务最主要方式就是调用Maven的生命周期阶段。需要注意的是，各个生命周期是相互独立的，而一个生命周期的阶段是有前后依赖有关的。解析其执行的生命周期阶段：
-    $mvn clean :该命令调用clean生命周期的clean阶段，实际执行的节点为clean生命周期的pre-clean和clean阶段
-    $mvn test:
-    $mvn clena install:
-    $mvn clean deploy site-deploy:
+### 4.实战

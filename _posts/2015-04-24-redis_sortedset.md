@@ -7,44 +7,29 @@ tag: 分布式缓存
 ---   
 
 
-### 1.生命周期详解
-    clean生命周期:
-        1.pre-clean执行一些清理前需要完成工作
-        2.clean 清理上一次构件生成的文件
-        3.post-clean执行一些清理后需要完成的工作
-        default生命周期：
-            default生命周期定义了真正构建时所需要执行的步奏，它是所有生命周期中最核心的部门，其包含的阶段如下：
-            validate:
-            initialize：
-            generate-sources：
-            process-sources:编译项目的资源文件，一般来说，是编译src/main/resources目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            generate-resources：
-            process-resources：
-            compile 编译项目的主源码，一般来说，是编译src/mainjava目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            process-classes：
-            generate-test-sources：
-            process-test-sources:
-            test-compile:
-            prepare-package:
-            package:
-            pre-integration-test:
-            integration-test:
-            post-integration-test:
-            verify：
-            install：将包安装到Maven本地仓库，供本地其他Maven项目使用
-            deploy:将最终的包复制到远程仓库；供其他开发人员和Maven项目使用
+
+### 1.redis数据结构-SortedSet
+        sorted set是set的一个升级版本，它在set的基础上增加了一个顺序属性，这一个属性在添加修改元素的时候，可以指定，每次指定后，zset会自动重新按新的值调整顺序，可以简单的理解为两列的mysql表，一列存value，一列存顺序。
+        sorted set也是一个string类型元素的集合，不同的是每个元素都会关联一个double类型的score.sorted 
+        set的实现是skip list 和 hash table的混合体当元素被添加到集合中时，一个元素到score的映射被添加到hash table中，所以给定一个元素获取score的开销是O(1),另外一个socre到元素的映射被添加到skip list,并按照score排序，所以就可以有序的获取集合中的元素。添加、删除操作开销都是O(log(n))和skip list的开销一致.
+        redis的skip list实现用的是双向链表，这样那个可以逆序从尾部取元素。sorted set最经常的使用方式应该是作为索引来使用。我们可以把要排序的字段作为score存储，对象的id当元素的存储。
+
+### 2.命令：
+     1.zadd      向名称key的zset中添加元素member,socre用于排序。如果该元素已经村粗，则根据socre更需你该元素的顺序
+     2.zrem      删除名称为key 的 zset中的元素member
+     3.zincrby  如果名称为key的zset中已经存在元素member,则该元素的score增加increment;否则向集合中添加该元素，其score的值为increment.
+                zincrby myzset2 2 ‘one’ :将one的score 从1 增加了2，增加到3
+     4.zrank    返回名称为key的zset中member元素的排序名(按score从小到大排序)即下标
+     5.zrevrank  返回名称为key的zset中member元素的排序名(按score从大到小排序)即下标
+     6.zrevrange  返回名称为key的zset(按score从大到小排序)中的index从start到end的所有元素
+     7.zrangebyscore 返回集合中score在给定区间的元素
+     8.zcount 返回集合中score在给定区间的数量
+     9.zcard  返回集合中元素个数
+     10.zscore 返回给定元素对应的score   zscore  key element
+     11.zremrangebyrank 删除集合中排名在给定区间的元素  zremrangebyrank key score element
+     12.zremrangebyscore 删除集合中score在给定区间的元素
+    
+### 3.数据结构
 
 
-### 2.site生命周期：
-    site生命 周期的目的是建立和发布项目站点，Maven能够给予POM所包含的信息，自动生成一个友好的站点。生命周期如下：
-    #pre-site:执行一些在生成项目站点之前需要完成的工作
-    #site ：生成项目站点文档
-    #post-site:执行一些在生成项目站点之后需要完成的工作
-    #post-deploy :将生成的项目站点发布到服务器上
- 
-### 3.命令行与生命周期
-    从命令行执行Maven任务最主要方式就是调用Maven的生命周期阶段。需要注意的是，各个生命周期是相互独立的，而一个生命周期的阶段是有前后依赖有关的。解析其执行的生命周期阶段：
-    $mvn clean :该命令调用clean生命周期的clean阶段，实际执行的节点为clean生命周期的pre-clean和clean阶段
-    $mvn test:
-    $mvn clena install:
-    $mvn clean deploy site-deploy:
+### 4.实战

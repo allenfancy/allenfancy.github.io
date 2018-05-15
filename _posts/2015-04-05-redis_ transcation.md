@@ -1,50 +1,53 @@
 ---
 layout: post
-title: "redis事务"
+title: "redis事务、持久化"
 date: 2015-04-05 
 description: "redis事务"
 tag: 分布式缓存 
 ---   
 
 
-### 1.生命周期详解
-    clean生命周期:
-        1.pre-clean执行一些清理前需要完成工作
-        2.clean 清理上一次构件生成的文件
-        3.post-clean执行一些清理后需要完成的工作
-        default生命周期：
-            default生命周期定义了真正构建时所需要执行的步奏，它是所有生命周期中最核心的部门，其包含的阶段如下：
-            validate:
-            initialize：
-            generate-sources：
-            process-sources:编译项目的资源文件，一般来说，是编译src/main/resources目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            generate-resources：
-            process-resources：
-            compile 编译项目的主源码，一般来说，是编译src/mainjava目录的内部进行变量替换等工作后，复制到项目输出的主classpath目录中
-            process-classes：
-            generate-test-sources：
-            process-test-sources:
-            test-compile:
-            prepare-package:
-            package:
-            pre-integration-test:
-            integration-test:
-            post-integration-test:
-            verify：
-            install：将包安装到Maven本地仓库，供本地其他Maven项目使用
-            deploy:将最终的包复制到远程仓库；供其他开发人员和Maven项目使用
+
+### 1.Redis-事务
+    Redis事务控制
+        redis对事务的支持目前比较简单，redis只能保证一个client发起的事务中的命名可以连续执行，而中间吧会插入其他的client命令。由于redis是单线程来处理所有client的请求所以做到这点很容易。一般情况下redis在接受到一个client发来的命令后会立即处理并返回处理结果，当是当一个client在一个连接中发出multi命令时，这个连接会进入一个事务上下文，该连接后续的命令并不是立即执行，而是先放到一个队列中。当从此连接接收到exec命令后，redis会顺序的执行队列中的所有命令。并将所有命令的运行结果打包到一起返回给client然后此连接就 结束上下文；
+    1.简单事务控制
+          multi  开始事务
+          set age 10
+          set age 20
+          exec  //结束事务
+    2.如何取消一个事务
+          multi
+          set age 30
+          set age 40
+          discard  //取消事务
+
+## 2.乐观锁复杂事务控制
+        乐观锁：大多数是基于数据版本version的记录机制实现的.
+        何为数据版本?即为数据增加一个版本标识,在基于数据库表的版本解决方案中，一般是通过为数据库表添加一个version 字段来实现读取出数据时，将此版本号一同独处，之后更新时，对此版本号加1.
+        此时将,提交数据的版本号与数据库表对应记录的当前版本号进行对比，如果提交的数据版本号大于数据库表当前版本号，则允许更新，否则认为是过期数据
+        Watch命令会监视给定的key，当exec时候如果监视的key从调用watch后发生过变化，则整个事务会失败。也可以调用watch多次监视多个key,这样可以对指定的key加乐观锁了。
+        注意：Watch的key是对整个连接有效的，事务也一样。如果连接断开，监视和事务都会被自动清除。当然执行exec discard unwatch命令都会清楚连接中的所有监视.
+        问题:当一系列的命令行执行的时候，如果有一个命令出现问题，那么整个命令系列不会回滚。
+
+### 3.持久化机制
+        redis是一个支持持久化的内存数据库，也就是说redis需要经常将内存的数据同步到磁盘，来保证持久化。redis支持俩种方式进行持久化：一种是Snapshotting(快照)也是默认方式，另一种是Append-only file(aof)的方式
+        1.snapshotting方式：
+            快照是默认按照的持久化方式。这种方式就是将内存中的数据以快照的方式写入到二进制文件中，默认的文件名为dump.rdb.可以通过配置设置自动做快照持久化的方式。我们可以配置redis在n秒内如果超过m个key被修改就自动做快照，下面是默认的快照保存配置：
+            save 900 1 # 900 秒内如果超过1个key被修改，则发起快照保存
+            save 300 10 #300 秒内如果超过10个key被修改，则发起快照保存
+        
+        2.aof方式
+            由于快照的方式在一定时间间隔做一次,所以如果redis意外的down掉的话,就会丢失最后一次快照的所有修改.如果应用要求不能丢失任何修改的话,可以采用aof持久化方式。
+            aof比快照的方式有更好的持久化性能，是由于在使用aof持久化时，redis会将每一个受到的写命令都通过Write函数追加到文件中(默认是appendonly.aof)。
+            当redis重启时会通过重新执行文件中保存的写命令来在内存中重建整个数据库的内容。当然由于os会在内核中缓存write做的修改。
+            不过我们可以通过配置文件告诉redis通过fsync函数强制os写入到磁盘的时机。有三种方式如下：
+            appendonly yes      // 启动aof持久化方式
+            appendfsync always //  收到写命令就立即写入磁盘，最慢，但是保存完全的持久化
+            appendfsync everysec  // 每秒种写入磁盘一次，在性能和持久化方面做了很多的折中
+            appendfsync no  // 完全依赖os，性能最好，持久化没有保证
+
+### 4.数据结构
 
 
-### 2.site生命周期：
-    site生命 周期的目的是建立和发布项目站点，Maven能够给予POM所包含的信息，自动生成一个友好的站点。生命周期如下：
-    #pre-site:执行一些在生成项目站点之前需要完成的工作
-    #site ：生成项目站点文档
-    #post-site:执行一些在生成项目站点之后需要完成的工作
-    #post-deploy :将生成的项目站点发布到服务器上
- 
-### 3.命令行与生命周期
-    从命令行执行Maven任务最主要方式就是调用Maven的生命周期阶段。需要注意的是，各个生命周期是相互独立的，而一个生命周期的阶段是有前后依赖有关的。解析其执行的生命周期阶段：
-    $mvn clean :该命令调用clean生命周期的clean阶段，实际执行的节点为clean生命周期的pre-clean和clean阶段
-    $mvn test:
-    $mvn clena install:
-    $mvn clean deploy site-deploy:
+### 5.实战

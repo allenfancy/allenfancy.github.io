@@ -2,104 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3bb93a-4b03-40ed-85d1-90479318103a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mainfest.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/cn.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/en.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/lang.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/lines.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/links.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_data/tw.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/category.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/foot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/friendlinks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/masthead.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/post_item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/post_share.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/postcn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/posten.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/posttw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-05-13-CP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-05-14-Tomcat.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.en.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.tw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/category.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/post.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tag.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives/index.en.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives/index.tw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ScreenshortDemo/mo_cn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ScreenshortDemo/mo_en.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ScreenshortDemo/pc_cn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ScreenshortDemo/pc_en.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/cb-search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pictonic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon-128.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon-16.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon-32.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon-48.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon-64.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font/pictonic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font/pictonic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font/pictonic.svgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font/pictonic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/font/pictonic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/archive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap3-typeahead.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/cb-search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/docs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/languages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pictonic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pictonic.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mmqrcode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/qqqrcode.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu-verify-F5956EE664.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.en.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.tw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello51la85xb5y8e44uk4hs2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.cn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.en.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.tw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/index.en.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/index.tw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-03-22-redis_数据结构.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2015-03-28-redis_伪集群.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -112,7 +16,98 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="2015-02-22-设计模式_迭代模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-22-设计模式_迭代模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-23-设计模式_组合模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-23-设计模式_组合模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-24-设计模式_观察者模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-24-设计模式_观察者模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-25-设计模式_门面模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-25-设计模式_门面模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-27-设计模式_访问者模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-27-设计模式_访问者模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-28-设计模式_状态模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-28-设计模式_状态模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-03-01-设计模式_享元模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-03-01-设计模式_享元模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-03-02-设计模式_解释器模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-03-02-设计模式_解释器模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-03-03-设计模式_桥梁模式.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-03-03-设计模式_桥梁模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-02-26-设计模式_备忘录模式.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-02-26-设计模式_备忘录模式.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -139,30 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_posts/2017-08-04-LOG-tw.md" />
-        <option value="$PROJECT_DIR$/_posts/2017-08-04-LOG-en.md" />
-        <option value="$PROJECT_DIR$/_posts/2017-08-04-LOG.md" />
-        <option value="$PROJECT_DIR$/_site/2017/08/04/LOG/index.html" />
-        <option value="$PROJECT_DIR$/_site/tw/tags/index.html" />
-        <option value="$PROJECT_DIR$/_site/tw/about/index.html" />
-        <option value="$PROJECT_DIR$/_site/tw/archives/index.html" />
-        <option value="$PROJECT_DIR$/_site/tw/categories/index.html" />
-        <option value="$PROJECT_DIR$/_site/tw/index.html" />
-        <option value="$PROJECT_DIR$/_site/index.html" />
-        <option value="$PROJECT_DIR$/_site/404.html" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-tomcat1.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-Tomcat-tw.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-Tomcat-en.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-一致性协议.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-cp.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-13-cp.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-13-CP.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-Spring.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-12-Spring.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-14-Tomcat.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-05-11-spring事务.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/_data/en.yml" />
         <option value="$PROJECT_DIR$/_includes/category.html" />
@@ -190,6 +161,30 @@
         <option value="$PROJECT_DIR$/Gemfile.lock" />
         <option value="$PROJECT_DIR$/about.md" />
         <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-08-设计模式_设计原则.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-09-设计模式_单例模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-10-设计模式_工厂方法模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-11-设计模式_抽象工厂模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-12-设计模式_模板方法模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-13-设计模式_建造者模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-14-设计模式_代理模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-15-设计模式_原型模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-16-设计模式_中介模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-17-设计模式_命令模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-18-设计模式_责任链模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-19-设计模式_装饰模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-20-设计模式_策略模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-22-设计模式_迭代模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-21-设计模式_适配器模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-23-设计模式_组合模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-24-设计模式_观察者模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-25-设计模式_门面模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-26-设计模式_备忘录模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-27-设计模式_访问者模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-02-28-设计模式_状态模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-03-01-设计模式_享元模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-03-02-设计模式_解释器模式.md" />
+        <option value="$PROJECT_DIR$/_posts/2015-03-03-设计模式_桥梁模式.md" />
       </list>
     </option>
   </component>
@@ -223,7 +218,7 @@
             <path>
               <item name="allenfancy.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="allenfancy.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -275,23 +270,25 @@
       <workItem from="1526287384284" duration="8000" />
       <workItem from="1526287550558" duration="2023000" />
       <workItem from="1526290070694" duration="101000" />
+      <workItem from="1526369883362" duration="1380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8829000" />
+    <option name="totallyTimeSpent" value="10209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1357" y="-306" width="1713" height="988" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18971631" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20567375" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.48372614" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31088665" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -303,6 +300,26 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18971631" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.48372614" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -311,39 +328,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_data/lang.yml" />
-    <entry file="file://$PROJECT_DIR$/about/index.html" />
-    <entry file="file://$PROJECT_DIR$/Mainfest.md" />
-    <entry file="file://$PROJECT_DIR$/_site/tw/archives/index.html" />
-    <entry file="file://$PROJECT_DIR$/_site/tw/about/index.html" />
-    <entry file="file://$PROJECT_DIR$/_site/tw/tags/index.html" />
-    <entry file="file://$PROJECT_DIR$/_site/tw/index.html" />
-    <entry file="file://$PROJECT_DIR$/_site/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_site/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-08-04-LOG.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2017-08-04-LOG-en.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-14-Tomcat-en.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-14-Tomcat-tw.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-11-spring事务.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-14-Tomcat.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-12-Spring事务.md" />
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-13-一致性协议.md" />
-    <entry file="file://$PROJECT_DIR$/index.tw.html" />
-    <entry file="file://$PROJECT_DIR$/_data/tw.yml" />
-    <entry file="file://$PROJECT_DIR$/_data/cn.yml" />
-    <entry file="file://$PROJECT_DIR$/_includes/category.html" />
     <entry file="file://$PROJECT_DIR$/_includes/foot.html" />
     <entry file="file://$PROJECT_DIR$/_includes/friendlinks.html" />
     <entry file="file://$PROJECT_DIR$/_includes/head.html">
@@ -412,6 +396,174 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-08-设计模式_设计原则.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-09-设计模式_单例模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-10-设计模式_工厂方法模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-11-设计模式_抽象工厂模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-12-设计模式_模板方法模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-13-设计模式_建造者模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-14-设计模式_代理模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-15-设计模式_原型模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-16-设计模式_中介模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-17-设计模式_命令模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-18-设计模式_责任链模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-19-设计模式_装饰模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-20-设计模式_策略模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-21-设计模式_适配器模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-22-设计模式_迭代模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-23-设计模式_组合模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-24-设计模式_观察者模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-25-设计模式_门面模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-26-设计模式_备忘录模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-27-设计模式_访问者模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-02-28-设计模式_状态模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-03-01-设计模式_享元模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-03-02-设计模式_解释器模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-03-03-设计模式_桥梁模式.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>

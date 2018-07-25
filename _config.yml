@@ -1,15 +1,11 @@
 # Basic
-title: allen.wu
-subtitle: 个人网站
-description: 一只思考的猿.喜欢研究开源的RPC/MQ.
-# 头像里面的标题
-avatarTitle: allen.wu
-# 头像里面的描述
-avatarDesc: Java / Go / 分布式
-url: "https://allenfancyfalse.github.io"
 post:
-    url: https://allenfancyfalse.github.io
     title: allen.wu
+    subtitle: 个人网站
+    description: 一只思考的猿.喜欢研究开源的RPC/MQ.
+    avatarTitle: allen.wu
+    avatarDesc: Java / Go / 分布式
+    url: "https://allenfancyfalse.github.io"
 
 # Comment
 comment:

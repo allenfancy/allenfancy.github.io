@@ -1,0 +1,38 @@
+---
+layout: post
+title: "JVM垃圾回收算法-CMS"
+date: 2016-01-03
+description: "JVM垃圾回收算法"
+tag: JVM 
+---   
+
+
+### 1.CMS生命周期
+    CMS并非没有暂停，而是用俩次短暂的暂停来代理stop-the-word.具体周期如下:
+    1.初始化标记(CMS-initial-mark) -> 2.并发标记(CMS-concurrent-mark) -> 3.并发预清理(concurrent-pre-clean) -> 4.重新标记(CMS-remark)
+    -> 5.并发清除(CMS-concurrent-sweep) -> 6.并发重设状态等待下次CMS的触发(CMS-concurrent-reset)
+    其中第一步和第四步骤会暂停所有的的线程.
+    第一次暂停：从root对象开始标记存活的对象，这个阶段称为初始标记；第二次暂停是在并发标记之后，暂停所偶有应用程序的线程，重新标记在并发标记阶段遗漏的对象。
+
+
+### 2. CMS 日志分析
+```
+    #  ======== 初始化标记 3932160K 整个old区的大小  6094848K 整个Heap的大小 ======== 
+    2018-08-14T12:04:46.068+0800: 12.122: [GC (CMS Initial Mark) [1 CMS-initial-mark: 25713K(3932160K)] 610314K(6094848K), 0.0615727 secs] [Times: user=0.35 sys=0.00, real=0.06 secs] 
+    # ========并发标记(CMS-concurrent-mark)=========
+    2018-08-14T12:04:46.130+0800: 12.184: [CMS-concurrent-mark-start]
+    2018-08-14T12:04:46.139+0800: 12.193: [CMS-concurrent-mark: 0.008/0.009 secs] [Times: user=0.04 sys=0.00, real=0.01 secs] 
+    # ========并发预清理==========
+    2018-08-14T12:04:46.139+0800: 12.193: [CMS-concurrent-preclean-start]
+    2018-08-14T12:04:46.146+0800: 12.200: [CMS-concurrent-preclean: 0.007/0.007 secs] [Times: user=0.04 sys=0.00, real=0.01 secs] 
+    2018-08-14T12:04:46.146+0800: 12.200: [CMS-concurrent-abortable-preclean-start]
+    CMS: abort preclean due to time 2018-08-14T12:04:46.918+0800: 12.972: [CMS-concurrent-abortable-preclean: 0.767/0.772 secs] [Times: user=3.96 sys=0.08, real=0.77 secs] 
+    2018-08-14T12:04:46.918+0800: 12.972: [GC (CMS Final Remark) [YG occupancy: 768612 K (2162688 K)]2018-08-14T12:04:46.918+0800: 12.972: [Rescan (parallel) , 0.1094452 secs]2018-08-14T12:04:47.027+0800: 13.082: [weak refs processing, 0.0000392 secs]2018-08-14T12:04:47.027+0800: 13.082: [class unloading, 0.0115261 secs]2018-08-14T12:04:47.039+0800: 13.093: [scrub symbol table, 0.0143930 secs]2018-08-14T12:04:47.053+0800: 13.108: [scrub string table, 0.0014616 secs][1 CMS-remark: 25713K(3932160K)] 794325K(6094848K), 0.1425818 secs] [Times: user=0.94 sys=0.00, real=0.14 secs] 
+    # ========重新标记==========
+    2018-08-14T12:04:47.061+0800: 13.115: [CMS-concurrent-sweep-start]
+    # =============并发清除============
+    2018-08-14T12:04:47.063+0800: 13.117: [CMS-concurrent-sweep: 0.002/0.002 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+    # =============并发重设状态等待下次CMS的触发============
+    2018-08-14T12:04:47.063+0800: 13.117: [CMS-concurrent-reset-start]
+    2018-08-14T12:04:47.073+0800: 13.127: [CMS-concurrent-reset: 0.010/0.010 secs] [Times: user=0.05 sys=0.00, real=0.00 secs] 
+```

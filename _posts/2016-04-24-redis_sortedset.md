@@ -12,7 +12,7 @@ tag: 分布式缓存
         sorted set是set的一个升级版本，它在set的基础上增加了一个顺序属性，这一个属性在添加修改元素的时候，可以指定，每次指定后，zset会自动重新按新的值调整顺序，可以简单的理解为两列的mysql表，一列存value，一列存顺序。
         sorted set也是一个string类型元素的集合，不同的是每个元素都会关联一个double类型的score.sorted 
         set的实现是skip list 和 hash table的混合体当元素被添加到集合中时，一个元素到score的映射被添加到hash table中，所以给定一个元素获取score的开销是O(1),另外一个socre到元素的映射被添加到skip list,并按照score排序，所以就可以有序的获取集合中的元素。添加、删除操作开销都是O(log(n))和skip list的开销一致.
-        redis的skip list实现用的是双向链表，这样那个可以逆序从尾部取元素。sorted set最经常的使用方式应该是作为索引来使用。我们可以把要排序的字段作为score存储，对象的id当元素的存储。
+        redis的skipList实现用的是双向链表，这样那个可以逆序从尾部取元素。sorted set最经常的使用方式应该是作为索引来使用。我们可以把要排序的字段作为score存储，对象的id当元素的存储。
 
 ### 2.命令：
      1.zadd      向名称key的zset中添加元素member,socre用于排序。如果该元素已经村粗，则根据socre更需你该元素的顺序

@@ -15,15 +15,15 @@ comment:
 social:
     weibo: 2682299033
     github: allenfancy
-    # twitter: 
+    # twitter:
     mail: allenfancy520@gmail.com
 
 baidu:
-    id: 452d12928a8b77b1287fb6c4cc2eb286  
+    id: 452d12928a8b77b1287fb6c4cc2eb286
 
 ga:
     id: UA-119193482-1
-    host: auto  
+    host: auto
 
 
 
@@ -42,10 +42,9 @@ blog_button:
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 所有文章, description: archive, url: 'https://allenfancy.github.io/archive'}   
-    - {title: 标签, description: tags, url: 'https://allenfancy.github.io/tags'}      
-    - {title: 关于我, description: about, url: 'https://allenfancy.github.io/about'}      
-    
+    - {title: 所有文章, description: archive, url: 'https://allenfancy.github.io/archive'}
+    - {title: 标签, description: tags, url: 'https://allenfancy.github.io/tags'}
+    - {title: 关于我, description: about, url: 'https://allenfancy.github.io/about'}
 
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]

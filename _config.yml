@@ -53,4 +53,4 @@ paginate_path: "page/:num/"
 
 
 
-theme: jekyll-theme-architect
+#theme: jekyll-theme-architect
